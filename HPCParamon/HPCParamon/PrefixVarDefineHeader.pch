@@ -1,0 +1,18 @@
+//
+//  PrefixVarDefineHeader.pch
+//  HPCParamon
+//
+//  Created by 张小静  on 14-9-21.
+//  Copyright (c) 2014年 张小静 . All rights reserved.
+//
+
+#ifndef HPCParamon_PrefixVarDefineHeader_pch
+#define HPCParamon_PrefixVarDefineHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+static (NSString *); userKey =nil;
+static const (NSString *); loginApiPort =@"checkAppUser-APPUSER";
+static const (NSString *) getWorkMSGPort =@"findPage-APPJOB";
+//static const ()
+#endif

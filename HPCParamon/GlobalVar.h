@@ -10,4 +10,5 @@
 
 @interface GlobalVar : NSObject
 
+
 @end

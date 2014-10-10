@@ -18,6 +18,9 @@
 @property (weak, nonatomic) IBOutlet UITextField *passWord;
 @property (weak, nonatomic) IBOutlet UIButton *button_2;
 @property (nonatomic) _Block_H_ BOOL isRememberKey;
+@property (nonatomic) BOOL isLockPasswd;
+@property (weak,nonatomic) IBOutlet UIButton *barLock;
+
 @end
 
 @implementation ParLoginViewController
@@ -52,13 +55,17 @@
     NSMutableAttributedString *lockAttributedString = [[NSMutableAttributedString alloc] initWithString:[NSString fontAwesomeIconStringForEnum:FAIconLock]];
     [lockAttributedString addAttribute:NSFontAttributeName value:[UIFont fontWithName:kFontAwesomeFamilyName size:20] range:NSMakeRange(0, 1)];
     [lockAttributedString addAttribute:NSForegroundColorAttributeName value:[UIColor grayColor] range:NSMakeRange(0, 1)];
-    UIButton *barLock =[UIButton buttonWithType:UIButtonTypeCustom];
-    [barLock setFrame:CGRectMake(_passWord.frame.origin.x+_userName.frame.size.width-32, _passWord.frame.origin.y, 30, 30)];
+   
+    //_barLock =[UIButton buttonWithType:UIButtonTypeCustom];
+   // [_barLock setFrame:CGRectMake(_passWord.frame.origin.x+_userName.frame.size.width-32, _passWord.frame.origin.y, 30, 30)];
     
-    [barLock setTitle:lockAttributedString.string forState:UIControlStateNormal];
-    [barLock setAttributedTitle:lockAttributedString forState:UIControlStateNormal];
+    [_barLock setTitle:lockAttributedString.string forState:UIControlStateNormal];
+    [_barLock setAttributedTitle:lockAttributedString forState:UIControlStateNormal];
     
-    [self.view addSubview:barLock];
+
+    _isLockPasswd =TRUE;
+    
+   // [self.view addSubview:_barLock];
 
     NSString *loginTitle =[[NSString alloc] initWithFormat:@"%@ %@",[NSString fontAwesomeIconStringForEnum:FAIconKey],@"登录"];
     
@@ -81,6 +88,43 @@
     
     
 }
+
+- (IBAction)PasswdStateChanged:(id)sender {
+   
+    if (_isLockPasswd) {
+        [self setPasswdFAIconUnLockState:sender];
+        _isLockPasswd =FALSE;
+    }
+    else
+    {
+        [self setPasswdFAIconLockState:sender];
+        _isLockPasswd =TRUE;
+
+    }
+}
+
+-(void) setPasswdFAIconLockState:(id) sender
+{
+    NSMutableAttributedString *lockAttributedString = [[NSMutableAttributedString alloc] initWithString:[NSString fontAwesomeIconStringForEnum:FAIconLock]];
+    [lockAttributedString addAttribute:NSFontAttributeName value:[UIFont fontWithName:kFontAwesomeFamilyName size:20] range:NSMakeRange(0, 1)];
+    [lockAttributedString addAttribute:NSForegroundColorAttributeName value:[UIColor grayColor] range:NSMakeRange(0, 1)];
+    [_barLock setTitle:lockAttributedString.string forState:UIControlStateNormal];
+    [_barLock setAttributedTitle:lockAttributedString forState:UIControlStateNormal];
+    _passWord.secureTextEntry = YES;
+
+}
+-(void) setPasswdFAIconUnLockState:(id) sender
+{
+    
+    NSMutableAttributedString *lockAttributedString = [[NSMutableAttributedString alloc] initWithString:[NSString fontAwesomeIconStringForEnum:FAIconUnlock]];
+    [lockAttributedString addAttribute:NSFontAttributeName value:[UIFont fontWithName:kFontAwesomeFamilyName size:20] range:NSMakeRange(0, 1)];
+    [lockAttributedString addAttribute:NSForegroundColorAttributeName value:[UIColor grayColor] range:NSMakeRange(0, 1)];
+    [_barLock setTitle:lockAttributedString.string forState:UIControlStateNormal];
+    [_barLock setAttributedTitle:lockAttributedString forState:UIControlStateNormal];
+    
+    _passWord.secureTextEntry = NO;
+}
+
 - (IBAction)pressButtonAdd1:(id)sender {
      self.navigationItem.rightBarButtonItem.badgeValue = @"2";
     [self performSegueWithIdentifier:@"loginView" sender:self];
@@ -216,7 +260,8 @@
      } failure:^(AFHTTPRequestOperation *operation, NSError *error)
      {
 #if __IPHONE_OS_VERSION_MIN_REQUIRED
-         [[[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Error", nil) message:[error localizedDescription] delegate:nil cancelButtonTitle:nil otherButtonTitles:NSLocalizedString(@"OK", nil), nil] show];
+        // [[[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Error", nil) message:[error localizedDescription] delegate:nil cancelButtonTitle:nil otherButtonTitles:NSLocalizedString(@"OK", nil), nil] show];
+        [[[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Error", nil) message:@"服务器地址端口错误！" delegate:nil cancelButtonTitle:nil otherButtonTitles:NSLocalizedString(@"OK", nil), nil] show];
 #else
          [[NSAlert alertWithMessageText:NSLocalizedString(@"Error", nil) defaultButton:NSLocalizedString(@"OK", nil) alternateButton:nil otherButton:nil informativeTextWithFormat:[error localizedDescription]] runModal];
 #endif

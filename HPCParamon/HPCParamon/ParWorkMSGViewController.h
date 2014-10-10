@@ -11,6 +11,8 @@
 #import <QuartzCore/QuartzCore.h>
 #import "Header.h"
 #import "UIPopoverListView.h"
+#import "ParWorkView.h"
+#import "ASFTableView.h"
 @interface ParWorkMSGViewController : UIViewController <UIPopoverListViewDataSource, UIPopoverListViewDelegate>
 @property (strong, nonatomic) IBOutlet UIView *ParView;
 
@@ -23,5 +25,6 @@
 
 @property(nonatomic,retain)UIButton *workText;
 @property(nonatomic,retain)UIButton *alarmText;
+@property (weak, nonatomic) IBOutlet ASFTableView *mASFTableView;
 
 @end

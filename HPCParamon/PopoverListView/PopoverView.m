@@ -17,7 +17,7 @@
 #define kArrowCurvature 6.f
 #define SPACE 2.f
 #define ROW_HEIGHT 44.f
-#define TITLE_FONT [UIFont fontWithName:kFontAwesomeFamilyName size:20]
+#define TITLE_FONT [UIFont fontWithName:kFontAwesomeFamilyName size:15]
 #define RGB(r, g, b)    [UIColor colorWithRed:(r)/255.f green:(g)/255.f blue:(b)/255.f alpha:1.f]
 
 @interface PopoverView ()<UITableViewDataSource, UITableViewDelegate>
@@ -198,6 +198,7 @@
         cell.imageView.image = [UIImage imageNamed:[_imageArray objectAtIndex:indexPath.row]];
     }
     cell.textLabel.font = TITLE_FONT;
+   // cell.textLabel.font=[UIFont fontWithName:TITLE_FONT size:8];//设置文字类型与大小
     cell.textLabel.text = [_titleArray objectAtIndex:indexPath.row];
     
     if ([[UIDevice currentDevice].systemVersion floatValue] >= 7.0) {

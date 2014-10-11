@@ -25,70 +25,6 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "HPCParamon/ParWorkMSGViewController.m"
-            timestampString = "434624150.061259"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "187"
-            endingLineNumber = "187"
-            landmarkName = "-showAlarmMsgView:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "HPCParamon/ParWorkMSGViewController.m"
-            timestampString = "434624150.061259"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "188"
-            endingLineNumber = "188"
-            landmarkName = "-showAlarmMsgView:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "HPCParamon/ParWorkMSGViewController.m"
-            timestampString = "434624150.061259"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "377"
-            endingLineNumber = "377"
-            landmarkName = "-popoverListView:numberOfRowsInSection:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "HPCParamon/ParWorkMSGViewController.m"
-            timestampString = "434624150.061259"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "378"
-            endingLineNumber = "378"
-            landmarkName = "-popoverListView:numberOfRowsInSection:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "PopoverListView/PopoverView.m"
             timestampString = "433739568.926457"
             startingColumnNumber = "9223372036854775807"
@@ -135,38 +71,6 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "HPCParamon/ParWorkMSGViewController.m"
-            timestampString = "434624150.061259"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "166"
-            endingLineNumber = "166"
-            landmarkName = "-showUpdatePwdView:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "HPCParamon/ParWorkMSGViewController.m"
-            timestampString = "434624150.061259"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "163"
-            endingLineNumber = "163"
-            landmarkName = "-showUpdatePwdView:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "HPCParamon/ParUpdatePwdViewController.m"
             timestampString = "434536507.581756"
             startingColumnNumber = "9223372036854775807"
@@ -174,102 +78,6 @@
             startingLineNumber = "91"
             endingLineNumber = "91"
             landmarkName = "-viewDidLoad"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "HPCParamon/ParWorkMSGViewController.m"
-            timestampString = "434624150.061259"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "174"
-            endingLineNumber = "174"
-            landmarkName = "-showUpdatePwdView:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "HPCParamon/ParWorkMSGViewController.m"
-            timestampString = "434624150.061259"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "164"
-            endingLineNumber = "164"
-            landmarkName = "-showUpdatePwdView:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "HPCParamon/ParWorkMSGViewController.m"
-            timestampString = "434624150.061259"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "169"
-            endingLineNumber = "169"
-            landmarkName = "-showUpdatePwdView:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "HPCParamon/ParWorkMSGViewController.m"
-            timestampString = "434624150.061259"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "388"
-            endingLineNumber = "388"
-            landmarkName = "-popoverListView:didSelectIndexPath:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "HPCParamon/ParWorkMSGViewController.m"
-            timestampString = "434624150.061259"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "179"
-            endingLineNumber = "179"
-            landmarkName = "-loadWorkMsg:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "HPCParamon/ParWorkMSGViewController.m"
-            timestampString = "434624150.061259"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "178"
-            endingLineNumber = "178"
-            landmarkName = "-loadWorkMsg:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -324,7 +132,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "AFNetWorking/AFHTTPRequestOperation.m"
@@ -340,7 +148,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "AFNetWorking/AFHTTPRequestOperation.m"
@@ -374,8 +182,8 @@
                   continueAfterRunningActions = "No"
                   symbolName = "__39-[ParLoginViewController loginParamon:]_block_invoke"
                   moduleName = "HPCParamon"
-                  urlString = "file:///Users/liutingting/Desktop/app/2014-10-10/HPCParamon%20/HPCParamon/ParLoginViewController.m"
-                  timestampString = "434626835.920702"
+                  urlString = "file:///Users/liutingting/Desktop/app/work/ParaPortalApple/HPCParamon%20/ParamonApple/HPCParamon/HPCParamon/ParLoginViewController.m"
+                  timestampString = "434690810.751112"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "256"
@@ -388,8 +196,8 @@
                   continueAfterRunningActions = "No"
                   symbolName = "__39-[ParLoginViewController loginParamon:]_block_invoke"
                   moduleName = "HPCParamon"
-                  urlString = "file:///Users/liutingting/Desktop/app/2014-10-10/HPCParamon%20/HPCParamon/ParLoginViewController.m"
-                  timestampString = "434626835.920887"
+                  urlString = "file:///Users/liutingting/Desktop/app/work/ParaPortalApple/HPCParamon%20/ParamonApple/HPCParamon/HPCParamon/ParLoginViewController.m"
+                  timestampString = "434690810.751465"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "256"
@@ -500,8 +308,8 @@
                   continueAfterRunningActions = "No"
                   symbolName = "-[ParWorkMSGViewController workText]"
                   moduleName = "HPCParamon"
-                  urlString = "file:///Users/liutingting/Desktop/app/2014-10-10/HPCParamon%20/HPCParamon/ParWorkMSGViewController.h"
-                  timestampString = "434626835.921653"
+                  urlString = "file:///Users/liutingting/Desktop/app/work/ParaPortalApple/HPCParamon%20/ParamonApple/HPCParamon/HPCParamon/ParWorkMSGViewController.h"
+                  timestampString = "434690810.752937"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "26"
@@ -514,8 +322,8 @@
                   continueAfterRunningActions = "No"
                   symbolName = "-[ParWorkMSGViewController setWorkText:]"
                   moduleName = "HPCParamon"
-                  urlString = "file:///Users/liutingting/Desktop/app/2014-10-10/HPCParamon%20/HPCParamon/ParWorkMSGViewController.h"
-                  timestampString = "434626835.921839"
+                  urlString = "file:///Users/liutingting/Desktop/app/work/ParaPortalApple/HPCParamon%20/ParamonApple/HPCParamon/HPCParamon/ParWorkMSGViewController.h"
+                  timestampString = "434690810.753285"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "26"
@@ -643,22 +451,6 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "HPCParamon/ParWorkMSGViewController.m"
-            timestampString = "434624150.061259"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "144"
-            endingLineNumber = "144"
-            landmarkName = "-showSetMangerView:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "ASFTableView/ASFLabel.m"
             timestampString = "434626816.038291"
             startingColumnNumber = "9223372036854775807"
@@ -672,7 +464,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ASFTableView/ASFLabel.m"

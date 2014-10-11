@@ -10,6 +10,8 @@
 
 @implementation ParAppDelegate
 NSString * g_userKey;
+BOOL  g_workSystemUser =FALSE;
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {   
     /** 注册推送通知功能, 推送的形式：标记，声音，提示*/

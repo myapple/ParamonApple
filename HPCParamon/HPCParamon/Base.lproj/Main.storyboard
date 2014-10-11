@@ -246,44 +246,36 @@
                                 <rect key="frame" x="63" y="9" width="194" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <button opaque="NO" contentMode="redraw" fixedFrame="YES" placeholderIntrinsicWidth="46" placeholderIntrinsicHeight="30" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ouA-Uw-5Ry">
-                                <rect key="frame" x="33" y="131" width="46" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pzj-pm-YsS">
+                                <rect key="frame" x="73" y="108" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <rect key="contentStretch" x="0.95000000000000029" y="0.0" width="1" height="1"/>
-                                <state key="normal" title="Button">
+                                <state key="normal" title="&lt;&lt;" backgroundImage="btn_Circle">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WAg-Qh-s77">
-                                <rect key="frame" x="159" y="108" width="45" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MtI-Uf-FWg">
+                                <rect key="frame" x="122" y="109" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title=">">
+                                <state key="normal" title="&lt;" backgroundImage="btn_Circle">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gD5-iC-42a">
-                                <rect key="frame" x="124" y="108" width="30" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hgd-yy-Zoh">
+                                <rect key="frame" x="171" y="110" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="&lt;">
+                                <state key="normal" title=">" backgroundImage="btn_Circle">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BYF-bz-Ibu">
-                                <rect key="frame" x="212" y="108" width="30" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GDn-lu-Trb">
+                                <rect key="frame" x="220" y="110" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title=">>">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pzj-pm-YsS">
-                                <rect key="frame" x="87" y="108" width="24" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="&lt;&lt;">
+                                <state key="normal" title=">>" backgroundImage="btn_Circle">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
                             <view contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="ParWorkView" translatesAutoresizingMaskIntoConstraints="NO" id="zzR-72-KRr" customClass="ASFTableView">
-                                <rect key="frame" x="15" y="159" width="290" height="311"/>
+                                <rect key="frame" x="15" y="146" width="290" height="291"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </view>
@@ -298,7 +290,7 @@
                         <outlet property="btnSetUser" destination="eWo-hW-pAx" id="NZf-NY-mtm"/>
                         <outlet property="btnTitle" destination="3J2-S4-YjB" id="vCF-Mq-c2U"/>
                         <outlet property="btnWorkMsg" destination="Obk-RE-TUy" id="qSW-ZS-jK5"/>
-                        <outlet property="mASFTableView" destination="zzR-72-KRr" id="Q8h-Sg-xk8"/>
+                        <outlet property="mTableWorkMsg" destination="zzR-72-KRr" id="4bk-Zf-Ygk"/>
                         <outlet property="workView" destination="ohD-UX-roT" id="akT-ap-FWD"/>
                         <segue destination="TJA-wl-GET" kind="modal" identifier="UpdatePwdView" id="DTO-Fb-0r1"/>
                     </connections>
@@ -656,6 +648,7 @@
         <image name="background.png" width="443" height="333"/>
         <image name="blue" width="157" height="40"/>
         <image name="blue_low" width="235" height="62"/>
+        <image name="btn_Circle" width="85" height="84"/>
         <image name="btn_blue" width="130" height="77"/>
         <image name="first" width="57" height="55"/>
         <image name="green" width="250" height="75"/>
@@ -670,7 +663,7 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="3KB-8x-7OW"/>
+        <segue reference="xsH-ak-orC"/>
         <segue reference="zTW-c7-ryH"/>
     </inferredMetricsTieBreakers>
 </document>

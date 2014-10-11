@@ -26,12 +26,58 @@
 
 @property (strong, nonatomic)AMSmoothAlertView * alert;
 @property (nonatomic, retain) NSMutableArray *rowsArray;
+@property (nonatomic, retain) NSMutableArray *rowsManageUserArray;
 @end
 
 @implementation ParWorkMSGViewController
 @synthesize workDetailData;
 
--(void) initViews
+-(void) initManageUserViews
+{
+    /*NSInteger y =_btnAlarm.frame.origin.y+50;
+    CGRect rect =CGRectMake(self.view.frame.size.width/2, y, self.view.frame.size.width/2, self.view.frame.size.height -y-20) ;
+    self.mTableWorkMsg.frame = rect;
+   // [self.view  reload];
+    */
+    NSArray *cols = @[@"作业用户",@"操作"];
+    NSArray *weights = @[@(0.25f),@(0.25f)];
+    NSDictionary *options = @{kASF_OPTION_CELL_TEXT_FONT_SIZE : @(12),
+                              kASF_OPTION_CELL_TEXT_FONT_BOLD : @(true),
+                              kASF_OPTION_CELL_BORDER_COLOR : [UIColor lightGrayColor],
+                              kASF_OPTION_CELL_BORDER_SIZE : @(2.0),
+                              kASF_OPTION_BACKGROUND : [UIColor colorWithRed:230/255.0 green:244/255.0 blue:254/255.0 alpha:1.0]};
+    
+    [_mTableWorkMsg setDelegate:self];
+    [_mTableWorkMsg setBounces:NO];
+    [_mTableWorkMsg setSelectionColor:[UIColor colorWithRed:242/255.0 green:242/255.0 blue:242/255.0 alpha:1.0f]];
+    [_mTableWorkMsg setTitles:cols
+                  WithWeights:weights
+                  WithOptions:options
+                    WitHeight:32 Floating:YES];
+    
+    [_rowsArray removeAllObjects];
+    for (int i=0; i<25; i++) {
+        [_rowsArray addObject:@{
+                                kASF_ROW_ID :
+                                    @(i),
+                                
+                                kASF_ROW_CELLS :
+                                    @[@{kASF_CELL_TITLE : @"Sample ID", kASF_OPTION_CELL_TEXT_ALIGNMENT : @(NSTextAlignmentCenter)},
+                                      @{kASF_CELL_TITLE : @"Sample Name", kASF_OPTION_CELL_TEXT_ALIGNMENT : @(NSTextAlignmentLeft)},
+                                     ],
+                                
+                                kASF_ROW_OPTIONS :
+                                    @{kASF_OPTION_BACKGROUND : [UIColor whiteColor],
+                                      kASF_OPTION_CELL_PADDING : @(5),
+                                      kASF_OPTION_CELL_BORDER_COLOR : [UIColor lightGrayColor]},
+                                
+                                @"some_other_data" : @(123)}];
+    }
+    
+    [_mTableWorkMsg setRows:_rowsArray];
+    
+}
+-(void) initWorkViews
 {
     NSArray *cols = @[@"作业号",@"作业用户",@"结束状态",@"操作"];
     NSArray *weights = @[@(0.25f),@(0.25f),@(0.25f),@(0.25f)];
@@ -41,10 +87,10 @@
                               kASF_OPTION_CELL_BORDER_SIZE : @(2.0),
                               kASF_OPTION_BACKGROUND : [UIColor colorWithRed:230/255.0 green:244/255.0 blue:254/255.0 alpha:1.0]};
     
-    [_mASFTableView setDelegate:self];
-    [_mASFTableView setBounces:NO];
-    [_mASFTableView setSelectionColor:[UIColor colorWithRed:242/255.0 green:242/255.0 blue:242/255.0 alpha:1.0f]];
-    [_mASFTableView setTitles:cols
+    [_mTableWorkMsg setDelegate:self];
+    [_mTableWorkMsg setBounces:NO];
+    [_mTableWorkMsg setSelectionColor:[UIColor colorWithRed:242/255.0 green:242/255.0 blue:242/255.0 alpha:1.0f]];
+    [_mTableWorkMsg setTitles:cols
                   WithWeights:weights
                   WithOptions:options
                     WitHeight:32 Floating:YES];
@@ -69,13 +115,13 @@
                                 @"some_other_data" : @(123)}];
     }
     
-    [_mASFTableView setRows:_rowsArray];
+    [_mTableWorkMsg setRows:_rowsArray];
 
 }
 
 #pragma mark - ASFTableViewDelegate
 - (void)ASFTableView:(ASFTableView *)tableView DidSelectRow:(NSDictionary *)rowDict WithRowIndex:(NSUInteger)rowIndex {
-    NSLog(@"%d == %d ", rowIndex,_mASFTableView.selectedRowIndex);
+    NSLog(@"%d == %d ", rowIndex,_mTableWorkMsg.selectedRowIndex);
     NSLog(@"%@", rowDict);
 }
 - (id)initWithCoder:(NSCoder*)aDecoder
@@ -160,7 +206,7 @@
 -(void)showUpdatePwdView:(id) sender
 {
     [self performSegueWithIdentifier:@"UpdatePwdView" sender:sender];
-   // UIStoryboard* theStoryBroad = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    // UIStoryboard* theStoryBroad = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     //ParUpdatePwdViewController* destView = [theStoryBroad instantiateViewControllerWithIdentifier:@"UpdatePwdView"];
     //ParUpdatePwdViewController *destView =[[ParUpdatePwdViewController alloc] init];
 	//[self.navigationController pushViewController:destView animated: YES];
@@ -180,7 +226,7 @@
     
 	[self.navigationController pushViewController:destView animated: YES];
     */
-    [self performSegueWithIdentifier:@"WorkMsgView" sender:sender];
+  //  [self performSegueWithIdentifier:@"WorkMsgView" sender:sender];
     
 }
 - (IBAction)showAlarmMsgView:(id)sender {
@@ -447,7 +493,13 @@
 }
 - (void)viewDidLoad
 {
+    /*UITableView *tv=[[UITableView alloc]initWithFrame:CGRectMake(0,44, 320, 416) style:UITableViewStylePlain];
+    self.mTableManageUser = tv;
     
+    [_mTableManageUser setDelegate:self];
+    [_mTableManageUser setDataSource:self];
+    [self.view addSubview:_mTableManageUser];
+    */    
     workDetailData=[[ParWorkData alloc ] init];
     NSLog(@"%d",[workDetailData print]);
     [self getWorkMSGformServer:@"10" andPage:@"1"];
@@ -455,7 +507,14 @@
     NSLog(@"updateTime :%@" ,[workDetailData updateTime] );
     
     [self initCtrl];
-    [self initViews];
+    if (g_workSystemUser) {
+        [self initWorkViews];
+    }
+    else
+    {
+        [self initManageUserViews];
+    }
+    
     [super viewDidLoad];
     
 }

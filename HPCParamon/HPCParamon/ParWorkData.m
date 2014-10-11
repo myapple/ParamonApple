@@ -62,4 +62,26 @@
     NSLog(@"111");
     return 1;
 }
+
+-(id)init
+{
+    if (self = [super init]) {
+        workData = [[NSMutableArray alloc] init];
+    }
+    return self;
+}
+-(void) addData
+{
+    [workData removeAllObjects];
+    for (int i=0; i<25; i++) {
+        [workData addObject:@{
+                              @"workid" :@(i),
+                              @"workName":@"Sample name",
+                              @"state":@"sample state",
+                              @"oper" :@"delete "
+                              }
+         ];
+    }
+    
+}
 @end

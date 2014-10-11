@@ -25,6 +25,6 @@
 
 @property(nonatomic,retain)UIButton *workText;
 @property(nonatomic,retain)UIButton *alarmText;
-@property (weak, nonatomic) IBOutlet ASFTableView *mASFTableView;
-
+@property (weak, nonatomic) IBOutlet ASFTableView *mTableWorkMsg;
+@property (weak, nonatomic) IBOutlet UITableView *mTableManageUser;
 @end

@@ -22,7 +22,7 @@
 #define g_getWorkMSGPort @"findPage-APPJOB"
 #define  g_loginApiPort @"loginAppUser-APPUSER"
 extern NSString * g_userKey;
-
+extern BOOL  g_workSystemUser;
 extern int loadCount;
 extern NSMutableArray * _workdata;
 //NSString * g_userKey =nil;

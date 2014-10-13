@@ -14,6 +14,7 @@
 
 #import "ICarouseViewController.h"
 #import "ParCollectionView.h"
+#import "WorkMsgCell.h"
 @interface ParWorkMSGViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *btnSetUser;
 @property (weak, nonatomic) IBOutlet UIButton *btnAlarm;
@@ -28,23 +29,14 @@
 @property (nonatomic, retain) NSMutableArray *rowsManageUserArray;
 
 @property (weak, nonatomic) IBOutlet ParCollectionView *mWorkCollectview;
-
-
+@property (strong, nonatomic)NSMutableArray *mdataMArr;// 数据源
 @end
 
 @implementation ParWorkMSGViewController
 @synthesize workDetailData;
 
-#pragma mark - ASFTableViewDelegate
 
-- (id)initWithCoder:(NSCoder*)aDecoder
-{
-    if(self = [super initWithCoder:aDecoder])
-    {
-        _rowsArray = [[NSMutableArray alloc] init];
-    }
-    return self;
-}
+
 #pragma mark - show  popView
 - (IBAction)showSetMangerView:(UIButton *)sender {
    
@@ -418,8 +410,12 @@
     NSLog(@"updateTime :%@" ,[workDetailData updateTime] );
     
     [self initCtrl];
+   
+    //[self setUpCollection];
     if (g_workSystemUser) {
-       // 显示工作列表  [self initWorkViews];
+       // 显示工作列表
+        //[self initWorkViews];
+       // [self.mWorkCollectview  setUpCollection];
         
     }
     else
@@ -428,9 +424,49 @@
     }
     
     [super viewDidLoad];
-    
+    //[self.mWorkCollectview setUpCollection];
 }
 
+
+#pragma mark - Collection View Data Source
+
+-(NSInteger)CollectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
+    return self.mdataMArr.count;
+}
+/*
+ -(UICollectionViewCell *)CollectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
+    
+    static NSString *collectionCellID = @"WorkMsgCell";
+    WorkMsgCell *cell = (WorkMsgCell *)[collectionView dequeueReusableCellWithReuseIdentifier:collectionCellID forIndexPath:indexPath];
+    
+    //NSDictionary *dic    = self.mdataMArr[indexPath.row];
+    NSString * workID = [NSString stringWithFormat:@"%@",_mdataMArr[indexPath.row]];
+    cell.workID.text =workID;
+    cell.workUser.text =@"aa";
+    cell.endState.text =@"1" ;
+    [cell.Operation setTitle:@"delete" forState:UIControlStateNormal];
+    
+    return cell;
+};
+
+-(void)setUpCollection{
+    self.mdataMArr = [NSMutableArray array];
+    int testID =0;
+    testID++;
+   // while (testID <=20) {
+       ////
+     [_mdataMArr addObject:@"1"];
+     [_mdataMArr addObject:@"2"];
+     [_mdataMArr addObject:@"3"];
+     [_mdataMArr addObject:@"4"];
+    
+    
+    self.mWorkCollectview.delegate = self;
+    self.mWorkCollectview.dataSource = self;
+    
+    
+}
+*/
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];

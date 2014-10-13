@@ -277,7 +277,7 @@
                             <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" indicatorStyle="white" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="9Az-IM-A5l" customClass="ParCollectionView">
                                 <rect key="frame" x="8" y="165" width="304" height="271"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" red="0.90196084980000002" green="0.97254908080000002" blue="0.97254908080000002" alpha="1" colorSpace="deviceRGB"/>
+                                <color key="backgroundColor" red="0.047058828179999998" green="0.80000007149999997" blue="0.97254908080000002" alpha="1" colorSpace="deviceRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="2" minimumInteritemSpacing="2" id="bpo-rU-8ZF">
                                     <size key="itemSize" width="301" height="56"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -335,10 +335,6 @@
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
-                                <connections>
-                                    <outlet property="dataSource" destination="zCW-us-yuE" id="v3V-w0-guF"/>
-                                    <outlet property="delegate" destination="zCW-us-yuE" id="8si-0e-X4f"/>
-                                </connections>
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" red="0.90196084976196289" green="0.97254908084869385" blue="0.97254908084869385" alpha="1" colorSpace="deviceRGB"/>
@@ -450,12 +446,20 @@
                                 <color key="textColor" red="0.85098046064376831" green="0.062745101749897003" blue="0.30196079611778259" alpha="1" colorSpace="deviceRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nzz-9H-vrb">
+                                <rect key="frame" x="53" y="316" width="214" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="8"/>
+                                <color key="textColor" red="0.93333339691162109" green="0.3333333432674408" blue="0.039215687662363052" alpha="1" colorSpace="deviceRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.93333339689999995" green="0.98039221759999995" blue="0.97647064920000004" alpha="1" colorSpace="deviceRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="cjp-F3-cmD"/>
                     <connections>
                         <outlet property="labelError" destination="XGP-9N-55n" id="KxR-gi-PXh"/>
+                        <outlet property="labelErrorTip" destination="Nzz-9H-vrb" id="nOV-GD-Lq0"/>
                         <outlet property="passwd" destination="SF8-zb-aim" id="gKo-lM-cfB"/>
                         <outlet property="passwdAgain" destination="2Jv-ZJ-ugQ" id="rLz-rY-I5F"/>
                         <segue destination="zCW-us-yuE" kind="modal" identifier="BackView" id="xsH-ak-orC"/>
@@ -725,7 +729,7 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="3KB-8x-7OW"/>
+        <segue reference="xsH-ak-orC"/>
         <segue reference="zTW-c7-ryH"/>
     </inferredMetricsTieBreakers>
 </document>

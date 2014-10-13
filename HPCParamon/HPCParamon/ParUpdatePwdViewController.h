@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface ParUpdatePwdViewController : UIViewController
-
+@property (nonatomic) BOOL isNetNormal;
 @end

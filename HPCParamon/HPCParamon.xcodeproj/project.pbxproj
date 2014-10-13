@@ -81,7 +81,6 @@
 		E1560A9519C52E1A001BE223 /* HPCParamonTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E1560A9419C52E1A001BE223 /* HPCParamonTests.m */; };
 		E1560AA119C53AB0001BE223 /* ParWorkMSGViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1560A9F19C53AB0001BE223 /* ParWorkMSGViewController.m */; };
 		E167698B19EB9C3300BA956C /* CustomCellBackground.m in Sources */ = {isa = PBXBuildFile; fileRef = E167698719EB9C3300BA956C /* CustomCellBackground.m */; };
-		E167698C19EB9C3300BA956C /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E167698919EB9C3300BA956C /* DetailViewController.m */; };
 		E167698F19EB9D0900BA956C /* WorkMsgCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E167698E19EB9D0900BA956C /* WorkMsgCell.m */; };
 		E167699219EBA10400BA956C /* ParCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = E167699119EBA10400BA956C /* ParCollectionView.m */; };
 		E16F1B4C19D91DF600B73631 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E16F1B4B19D91DF600B73631 /* QuartzCore.framework */; };
@@ -110,6 +109,7 @@
 		E1840C0319D16D7900C240D3 /* aa.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E1840C0219D16D7900C240D3 /* aa.jpg */; };
 		E1C80AC719DA506E000B50CD /* PopoverView.m in Sources */ = {isa = PBXBuildFile; fileRef = E1C80AC619DA506E000B50CD /* PopoverView.m */; };
 		E1C80ACA19DA8C72000B50CD /* ParUpdatePwdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1C80AC919DA8C72000B50CD /* ParUpdatePwdViewController.m */; };
+		E1D5530D19EBD8A3008D6536 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = E1D5530C19EBD8A3008D6536 /* Reachability.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -235,8 +235,6 @@
 		E1560A9F19C53AB0001BE223 /* ParWorkMSGViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParWorkMSGViewController.m; sourceTree = "<group>"; };
 		E167698619EB9C3300BA956C /* CustomCellBackground.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomCellBackground.h; sourceTree = "<group>"; };
 		E167698719EB9C3300BA956C /* CustomCellBackground.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomCellBackground.m; sourceTree = "<group>"; };
-		E167698819EB9C3300BA956C /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
-		E167698919EB9C3300BA956C /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		E167698D19EB9D0900BA956C /* WorkMsgCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WorkMsgCell.h; sourceTree = "<group>"; };
 		E167698E19EB9D0900BA956C /* WorkMsgCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WorkMsgCell.m; sourceTree = "<group>"; };
 		E167699019EBA10400BA956C /* ParCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParCollectionView.h; sourceTree = "<group>"; };
@@ -284,6 +282,8 @@
 		E1C80AC619DA506E000B50CD /* PopoverView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PopoverView.m; path = PopoverListView/PopoverView.m; sourceTree = "<group>"; };
 		E1C80AC819DA8C72000B50CD /* ParUpdatePwdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParUpdatePwdViewController.h; sourceTree = "<group>"; };
 		E1C80AC919DA8C72000B50CD /* ParUpdatePwdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParUpdatePwdViewController.m; sourceTree = "<group>"; };
+		E1D5530B19EBD8A3008D6536 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		E1D5530C19EBD8A3008D6536 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -291,11 +291,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E12AF2CB19C58C4E00EBB95C /* SystemConfiguration.framework in Frameworks */,
 				E16F1B6319D9570400B73631 /* GPUImage.framework in Frameworks */,
 				E16F1B4C19D91DF600B73631 /* QuartzCore.framework in Frameworks */,
 				E1560A6919C52E1A001BE223 /* CoreGraphics.framework in Frameworks */,
 				E12AF2CD19C58C6400EBB95C /* MobileCoreServices.framework in Frameworks */,
-				E12AF2CB19C58C4E00EBB95C /* SystemConfiguration.framework in Frameworks */,
 				E12AF2C919C58C1F00EBB95C /* CFNetwork.framework in Frameworks */,
 				E1560A6B19C52E1A001BE223 /* UIKit.framework in Frameworks */,
 				E1560A6719C52E1A001BE223 /* Foundation.framework in Frameworks */,
@@ -502,6 +502,7 @@
 		E1560A5A19C52E1A001BE223 = {
 			isa = PBXGroup;
 			children = (
+				E1D5530A19EBD8A3008D6536 /* TestConnectNet */,
 				E167698319EB9C3300BA956C /* CollectionView */,
 				E16F826919E780E2003C15BA /* ASFTableView */,
 				E16F1B6419D95E3000B73631 /* View */,
@@ -622,8 +623,6 @@
 				E167698E19EB9D0900BA956C /* WorkMsgCell.m */,
 				E167698619EB9C3300BA956C /* CustomCellBackground.h */,
 				E167698719EB9C3300BA956C /* CustomCellBackground.m */,
-				E167698819EB9C3300BA956C /* DetailViewController.h */,
-				E167698919EB9C3300BA956C /* DetailViewController.m */,
 			);
 			path = CollectionView;
 			sourceTree = "<group>";
@@ -697,6 +696,15 @@
 				E1C80AC619DA506E000B50CD /* PopoverView.m */,
 			);
 			name = PopView;
+			sourceTree = "<group>";
+		};
+		E1D5530A19EBD8A3008D6536 /* TestConnectNet */ = {
+			isa = PBXGroup;
+			children = (
+				E1D5530B19EBD8A3008D6536 /* Reachability.h */,
+				E1D5530C19EBD8A3008D6536 /* Reachability.m */,
+			);
+			path = TestConnectNet;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -834,7 +842,6 @@
 			files = (
 				E10BD95119C801B4005E1CFE /* AFJSONRequestOperation.m in Sources */,
 				E114DE9919D7D4130033D211 /* UIHelpers.m in Sources */,
-				E167698C19EB9C3300BA956C /* DetailViewController.m in Sources */,
 				E10BD94F19C801B4005E1CFE /* AFHTTPRequestOperation.m in Sources */,
 				E16F1B6819D95EA700B73631 /* UIPopoverListView.m in Sources */,
 				E12D18F319C6EB5D00AF20F6 /* ParPrivateViewController.m in Sources */,
@@ -859,6 +866,7 @@
 				E1560A8019C52E1A001BE223 /* ParSecondViewController.m in Sources */,
 				E1560A7319C52E1A001BE223 /* main.m in Sources */,
 				E10BD95019C801B4005E1CFE /* AFImageRequestOperation.m in Sources */,
+				E1D5530D19EBD8A3008D6536 /* Reachability.m in Sources */,
 				E10CB9BD19D275D200F954F9 /* UIImage+BoxBlur.m in Sources */,
 				E167699219EBA10400BA956C /* ParCollectionView.m in Sources */,
 				E10BD95419C801B4005E1CFE /* AFPropertyListRequestOperation.m in Sources */,

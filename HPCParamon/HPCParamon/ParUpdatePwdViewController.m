@@ -7,15 +7,33 @@
 //
 
 #import "ParUpdatePwdViewController.h"
-
+#import "Reachability.h"
 @interface ParUpdatePwdViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *passwd;
 @property (weak, nonatomic) IBOutlet UITextField *passwdAgain;
 @property (weak, nonatomic) IBOutlet UILabel *labelError;
+@property (weak, nonatomic) IBOutlet UILabel *labelErrorTip;
+
 
 @end
 
 @implementation ParUpdatePwdViewController
+@synthesize isNetNormal;
+-(BOOL) IsEnableWIFI {
+    return ([[Reachability reachabilityForLocalWiFi] currentReachabilityStatus] != NotReachable);
+}
+
+// 是否3G
+-(BOOL) IsEnable3G {
+    return ([[Reachability reachabilityForInternetConnection] currentReachabilityStatus] != NotReachable);
+    
+}
+
+- (BOOL) TestNetisConnect
+{
+    return [self IsEnableWIFI]||[self IsEnable3G];
+}
+
 -(BOOL) isSamePasswd
 {
     NSString *pass = _passwd.text;
@@ -37,18 +55,29 @@
     if (![self isSamePasswd]) {
        // _labelError.
        _labelError.text =@"*";
+       _labelErrorTip.text =@"两次输入的密码不匹配";
     }
     else
     {
         _labelError.text=@"";
+        _labelErrorTip.text=@"";
+        
     }
+    
     [_passwdAgain resignFirstResponder];
     [_passwd resignFirstResponder];
 }
 
 - (IBAction)sendServer:(id)sender {
+    if (![self TestNetisConnect]) {
+        NSLog(@"当前网络为未连接状态");
+    }
+    else
+    {
+        NSLog(@"网络为连接状态");
+    }
     if ([self isSamePasswd]) {
-        NSLog(@"发送 新的密码到 服务器");
+        NSLog(@"发送新的密码到 服务器");
         [self performSegueWithIdentifier:@"BackView" sender:sender];
         return;
     }

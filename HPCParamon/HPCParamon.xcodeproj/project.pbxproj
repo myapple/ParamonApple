@@ -80,6 +80,10 @@
 		E1560A9319C52E1A001BE223 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E1560A9119C52E1A001BE223 /* InfoPlist.strings */; };
 		E1560A9519C52E1A001BE223 /* HPCParamonTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E1560A9419C52E1A001BE223 /* HPCParamonTests.m */; };
 		E1560AA119C53AB0001BE223 /* ParWorkMSGViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1560A9F19C53AB0001BE223 /* ParWorkMSGViewController.m */; };
+		E167698B19EB9C3300BA956C /* CustomCellBackground.m in Sources */ = {isa = PBXBuildFile; fileRef = E167698719EB9C3300BA956C /* CustomCellBackground.m */; };
+		E167698C19EB9C3300BA956C /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E167698919EB9C3300BA956C /* DetailViewController.m */; };
+		E167698F19EB9D0900BA956C /* WorkMsgCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E167698E19EB9D0900BA956C /* WorkMsgCell.m */; };
+		E167699219EBA10400BA956C /* ParCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = E167699119EBA10400BA956C /* ParCollectionView.m */; };
 		E16F1B4C19D91DF600B73631 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E16F1B4B19D91DF600B73631 /* QuartzCore.framework */; };
 		E16F1B5A19D9554500B73631 /* AMBouncingView.m in Sources */ = {isa = PBXBuildFile; fileRef = E16F1B4F19D9554500B73631 /* AMBouncingView.m */; };
 		E16F1B5B19D9554500B73631 /* AMSmoothAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = E16F1B5219D9554500B73631 /* AMSmoothAlertView.m */; };
@@ -229,6 +233,14 @@
 		E1560A9419C52E1A001BE223 /* HPCParamonTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HPCParamonTests.m; sourceTree = "<group>"; };
 		E1560A9E19C53AB0001BE223 /* ParWorkMSGViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParWorkMSGViewController.h; sourceTree = "<group>"; };
 		E1560A9F19C53AB0001BE223 /* ParWorkMSGViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParWorkMSGViewController.m; sourceTree = "<group>"; };
+		E167698619EB9C3300BA956C /* CustomCellBackground.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomCellBackground.h; sourceTree = "<group>"; };
+		E167698719EB9C3300BA956C /* CustomCellBackground.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomCellBackground.m; sourceTree = "<group>"; };
+		E167698819EB9C3300BA956C /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		E167698919EB9C3300BA956C /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		E167698D19EB9D0900BA956C /* WorkMsgCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WorkMsgCell.h; sourceTree = "<group>"; };
+		E167698E19EB9D0900BA956C /* WorkMsgCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WorkMsgCell.m; sourceTree = "<group>"; };
+		E167699019EBA10400BA956C /* ParCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParCollectionView.h; sourceTree = "<group>"; };
+		E167699119EBA10400BA956C /* ParCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParCollectionView.m; sourceTree = "<group>"; };
 		E16F1B4B19D91DF600B73631 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		E16F1B4E19D9554500B73631 /* AMBouncingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMBouncingView.h; sourceTree = "<group>"; };
 		E16F1B4F19D9554500B73631 /* AMBouncingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMBouncingView.m; sourceTree = "<group>"; };
@@ -490,6 +502,7 @@
 		E1560A5A19C52E1A001BE223 = {
 			isa = PBXGroup;
 			children = (
+				E167698319EB9C3300BA956C /* CollectionView */,
 				E16F826919E780E2003C15BA /* ASFTableView */,
 				E16F1B6419D95E3000B73631 /* View */,
 				E114DE6919D7D4130033D211 /* SSCheckBoxView */,
@@ -598,6 +611,21 @@
 				E1560A9119C52E1A001BE223 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E167698319EB9C3300BA956C /* CollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				E167699019EBA10400BA956C /* ParCollectionView.h */,
+				E167699119EBA10400BA956C /* ParCollectionView.m */,
+				E167698D19EB9D0900BA956C /* WorkMsgCell.h */,
+				E167698E19EB9D0900BA956C /* WorkMsgCell.m */,
+				E167698619EB9C3300BA956C /* CustomCellBackground.h */,
+				E167698719EB9C3300BA956C /* CustomCellBackground.m */,
+				E167698819EB9C3300BA956C /* DetailViewController.h */,
+				E167698919EB9C3300BA956C /* DetailViewController.m */,
+			);
+			path = CollectionView;
 			sourceTree = "<group>";
 		};
 		E16F1B4D19D9554500B73631 /* AMSmoothAlert */ = {
@@ -806,12 +834,14 @@
 			files = (
 				E10BD95119C801B4005E1CFE /* AFJSONRequestOperation.m in Sources */,
 				E114DE9919D7D4130033D211 /* UIHelpers.m in Sources */,
+				E167698C19EB9C3300BA956C /* DetailViewController.m in Sources */,
 				E10BD94F19C801B4005E1CFE /* AFHTTPRequestOperation.m in Sources */,
 				E16F1B6819D95EA700B73631 /* UIPopoverListView.m in Sources */,
 				E12D18F319C6EB5D00AF20F6 /* ParPrivateViewController.m in Sources */,
 				E1840BF819D157D300C240D3 /* QBTitleView.m in Sources */,
 				E16F827819E780E2003C15BA /* ASFTableViewPublicGlobals.m in Sources */,
 				E1C80AC719DA506E000B50CD /* PopoverView.m in Sources */,
+				E167698B19EB9C3300BA956C /* CustomCellBackground.m in Sources */,
 				E1C80ACA19DA8C72000B50CD /* ParUpdatePwdViewController.m in Sources */,
 				E16F1B5B19D9554500B73631 /* AMSmoothAlertView.m in Sources */,
 				E1560A7D19C52E1A001BE223 /* ParFirstViewController.m in Sources */,
@@ -821,6 +851,7 @@
 				E10CB9BA19D275D200F954F9 /* ANBlurredTableView.m in Sources */,
 				E16F827719E780E2003C15BA /* ASFTableViewPrivateGlobals.m in Sources */,
 				E1560A7719C52E1A001BE223 /* ParAppDelegate.m in Sources */,
+				E167698F19EB9D0900BA956C /* WorkMsgCell.m in Sources */,
 				E10BD95B19C8027F005E1CFE /* AFTwitterAPIClient.m in Sources */,
 				E16F1B5A19D9554500B73631 /* AMBouncingView.m in Sources */,
 				E16F827619E780E2003C15BA /* ASFTableViewCell.m in Sources */,
@@ -829,6 +860,7 @@
 				E1560A7319C52E1A001BE223 /* main.m in Sources */,
 				E10BD95019C801B4005E1CFE /* AFImageRequestOperation.m in Sources */,
 				E10CB9BD19D275D200F954F9 /* UIImage+BoxBlur.m in Sources */,
+				E167699219EBA10400BA956C /* ParCollectionView.m in Sources */,
 				E10BD95419C801B4005E1CFE /* AFPropertyListRequestOperation.m in Sources */,
 				E10BD8F119C7E20D005E1CFE /* ParLoginViewController.m in Sources */,
 				E10CB9BC19D275D200F954F9 /* ANViewController.m in Sources */,

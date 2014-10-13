@@ -279,11 +279,15 @@
     //创建实例对象
     [[AFTwitterAPIClient sharedClient] postPath:apiPort parameters:parameters success:^(AFHTTPRequestOperation *operation, id JSON)
      {
-         NSDictionary* dict =(NSDictionary* )JSON;
-         
-        //[self saveUserMsgtoFile:@"" AndData:dict];
+         id myRequest = [NSJSONSerialization JSONObjectWithData:JSON options:NSJSONReadingMutableContainers error:nil];
+         if ([myRequest isKindOfClass:[NSDictionary class]]) {
+             NSDictionary *dict = (NSDictionary *)myRequest;
+             _retJsonData =dict;
+         }
+        //NSDictionary* dict =(NSDictionary* )JSON;
+       //  NSJSONSerialization JSONObjectWithData
+         //[self saveUserMsgtoFile:@"" AndData:dict];
         //[self getUserMsgfromFile:@"" AndData:dict ];
-         _retJsonData =dict;
          
      } failure:^(AFHTTPRequestOperation *operation, NSError *error)
      {

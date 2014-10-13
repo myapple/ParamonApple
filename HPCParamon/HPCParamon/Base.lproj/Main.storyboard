@@ -189,7 +189,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vzr-8B-7Kb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4903" y="-1540"/>
+            <point key="canvasLocation" x="-4695" y="-1540"/>
         </scene>
         <!--Par WorkMSG View Controller-->
         <scene sceneID="pIa-cW-DUB">
@@ -274,11 +274,72 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <view contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="ParWorkView" translatesAutoresizingMaskIntoConstraints="NO" id="zzR-72-KRr" customClass="ASFTableView">
-                                <rect key="frame" x="15" y="146" width="290" height="291"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                            </view>
+                            <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" indicatorStyle="white" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="9Az-IM-A5l" customClass="ParCollectionView">
+                                <rect key="frame" x="8" y="165" width="304" height="271"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="0.90196084980000002" green="0.97254908080000002" blue="0.97254908080000002" alpha="1" colorSpace="deviceRGB"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="2" minimumInteritemSpacing="2" id="bpo-rU-8ZF">
+                                    <size key="itemSize" width="301" height="56"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="WorkMsgCellID" id="teg-9n-cFG" customClass="WorkMsgCell">
+                                        <rect key="frame" x="2" y="0.0" width="301" height="56"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="301" height="56"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ogU-ce-bmX">
+                                                    <rect key="frame" x="2" y="0.0" width="73" height="56"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.85098046059999999" green="0.062745101750000004" blue="0.30196079609999998" alpha="1" colorSpace="deviceRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o44-sr-Pfp">
+                                                    <rect key="frame" x="78" y="0.0" width="73" height="56"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.85098046059999999" green="0.062745101750000004" blue="0.30196079609999998" alpha="1" colorSpace="deviceRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sLe-Me-NdC">
+                                                    <rect key="frame" x="154" y="0.0" width="73" height="56"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.85098046059999999" green="0.062745101750000004" blue="0.30196079609999998" alpha="1" colorSpace="deviceRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A8y-17-EZ3">
+                                                    <rect key="frame" x="229" y="0.0" width="72" height="56"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" title="Button" backgroundImage="white">
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                </button>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <outlet property="Operation" destination="A8y-17-EZ3" id="eho-Yx-fiG"/>
+                                            <outlet property="endState" destination="sLe-Me-NdC" id="8uA-7n-PQf"/>
+                                            <outlet property="workID" destination="ogU-ce-bmX" id="gYa-2q-pdY"/>
+                                            <outlet property="workUser" destination="o44-sr-Pfp" id="xRO-0u-koy"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="zCW-us-yuE" id="v3V-w0-guF"/>
+                                    <outlet property="delegate" destination="zCW-us-yuE" id="8si-0e-X4f"/>
+                                </connections>
+                            </collectionView>
                         </subviews>
                         <color key="backgroundColor" red="0.90196084976196289" green="0.97254908084869385" blue="0.97254908084869385" alpha="1" colorSpace="deviceRGB"/>
                     </view>
@@ -290,7 +351,7 @@
                         <outlet property="btnSetUser" destination="eWo-hW-pAx" id="NZf-NY-mtm"/>
                         <outlet property="btnTitle" destination="3J2-S4-YjB" id="vCF-Mq-c2U"/>
                         <outlet property="btnWorkMsg" destination="Obk-RE-TUy" id="qSW-ZS-jK5"/>
-                        <outlet property="mTableWorkMsg" destination="zzR-72-KRr" id="4bk-Zf-Ygk"/>
+                        <outlet property="mWorkCollectview" destination="9Az-IM-A5l" id="bf0-YD-Js1"/>
                         <outlet property="workView" destination="ohD-UX-roT" id="akT-ap-FWD"/>
                         <segue destination="TJA-wl-GET" kind="modal" identifier="UpdatePwdView" id="DTO-Fb-0r1"/>
                     </connections>
@@ -402,7 +463,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="has-l0-YCM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3491" y="-1500"/>
+            <point key="canvasLocation" x="-3663" y="-1545"/>
         </scene>
         <!--Carouse View Controller-->
         <scene sceneID="Z8e-or-dRb">
@@ -656,6 +717,7 @@
         <image name="purple" width="151" height="76"/>
         <image name="second" width="145" height="64"/>
         <image name="title" width="227" height="35"/>
+        <image name="white" width="98" height="80"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
@@ -663,7 +725,7 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="xsH-ak-orC"/>
+        <segue reference="3KB-8x-7OW"/>
         <segue reference="zTW-c7-ryH"/>
     </inferredMetricsTieBreakers>
 </document>

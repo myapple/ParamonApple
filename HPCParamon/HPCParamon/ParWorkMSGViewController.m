@@ -13,6 +13,7 @@
 #import "PopoverView.h"
 
 #import "ICarouseViewController.h"
+#import "ParCollectionView.h"
 @interface ParWorkMSGViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *btnSetUser;
 @property (weak, nonatomic) IBOutlet UIButton *btnAlarm;
@@ -22,108 +23,20 @@
 @property (strong, nonatomic) IBOutlet ParWorkView *workView;
 
 
-
-
 @property (strong, nonatomic)AMSmoothAlertView * alert;
 @property (nonatomic, retain) NSMutableArray *rowsArray;
 @property (nonatomic, retain) NSMutableArray *rowsManageUserArray;
+
+@property (weak, nonatomic) IBOutlet ParCollectionView *mWorkCollectview;
+
+
 @end
 
 @implementation ParWorkMSGViewController
 @synthesize workDetailData;
 
--(void) initManageUserViews
-{
-    /*NSInteger y =_btnAlarm.frame.origin.y+50;
-    CGRect rect =CGRectMake(self.view.frame.size.width/2, y, self.view.frame.size.width/2, self.view.frame.size.height -y-20) ;
-    self.mTableWorkMsg.frame = rect;
-   // [self.view  reload];
-    */
-    NSArray *cols = @[@"作业用户",@"操作"];
-    NSArray *weights = @[@(0.25f),@(0.25f)];
-    NSDictionary *options = @{kASF_OPTION_CELL_TEXT_FONT_SIZE : @(12),
-                              kASF_OPTION_CELL_TEXT_FONT_BOLD : @(true),
-                              kASF_OPTION_CELL_BORDER_COLOR : [UIColor lightGrayColor],
-                              kASF_OPTION_CELL_BORDER_SIZE : @(2.0),
-                              kASF_OPTION_BACKGROUND : [UIColor colorWithRed:230/255.0 green:244/255.0 blue:254/255.0 alpha:1.0]};
-    
-    [_mTableWorkMsg setDelegate:self];
-    [_mTableWorkMsg setBounces:NO];
-    [_mTableWorkMsg setSelectionColor:[UIColor colorWithRed:242/255.0 green:242/255.0 blue:242/255.0 alpha:1.0f]];
-    [_mTableWorkMsg setTitles:cols
-                  WithWeights:weights
-                  WithOptions:options
-                    WitHeight:32 Floating:YES];
-    
-    [_rowsArray removeAllObjects];
-    for (int i=0; i<25; i++) {
-        [_rowsArray addObject:@{
-                                kASF_ROW_ID :
-                                    @(i),
-                                
-                                kASF_ROW_CELLS :
-                                    @[@{kASF_CELL_TITLE : @"Sample ID", kASF_OPTION_CELL_TEXT_ALIGNMENT : @(NSTextAlignmentCenter)},
-                                      @{kASF_CELL_TITLE : @"Sample Name", kASF_OPTION_CELL_TEXT_ALIGNMENT : @(NSTextAlignmentLeft)},
-                                     ],
-                                
-                                kASF_ROW_OPTIONS :
-                                    @{kASF_OPTION_BACKGROUND : [UIColor whiteColor],
-                                      kASF_OPTION_CELL_PADDING : @(5),
-                                      kASF_OPTION_CELL_BORDER_COLOR : [UIColor lightGrayColor]},
-                                
-                                @"some_other_data" : @(123)}];
-    }
-    
-    [_mTableWorkMsg setRows:_rowsArray];
-    
-}
--(void) initWorkViews
-{
-    NSArray *cols = @[@"作业号",@"作业用户",@"结束状态",@"操作"];
-    NSArray *weights = @[@(0.25f),@(0.25f),@(0.25f),@(0.25f)];
-    NSDictionary *options = @{kASF_OPTION_CELL_TEXT_FONT_SIZE : @(12),
-                              kASF_OPTION_CELL_TEXT_FONT_BOLD : @(true),
-                              kASF_OPTION_CELL_BORDER_COLOR : [UIColor lightGrayColor],
-                              kASF_OPTION_CELL_BORDER_SIZE : @(2.0),
-                              kASF_OPTION_BACKGROUND : [UIColor colorWithRed:230/255.0 green:244/255.0 blue:254/255.0 alpha:1.0]};
-    
-    [_mTableWorkMsg setDelegate:self];
-    [_mTableWorkMsg setBounces:NO];
-    [_mTableWorkMsg setSelectionColor:[UIColor colorWithRed:242/255.0 green:242/255.0 blue:242/255.0 alpha:1.0f]];
-    [_mTableWorkMsg setTitles:cols
-                  WithWeights:weights
-                  WithOptions:options
-                    WitHeight:32 Floating:YES];
-    
-    [_rowsArray removeAllObjects];
-    for (int i=0; i<25; i++) {
-        [_rowsArray addObject:@{
-                                kASF_ROW_ID :
-                                    @(i),
-                                
-                                kASF_ROW_CELLS :
-                                    @[@{kASF_CELL_TITLE : @"Sample ID", kASF_OPTION_CELL_TEXT_ALIGNMENT : @(NSTextAlignmentCenter)},
-                                      @{kASF_CELL_TITLE : @"Sample Name", kASF_OPTION_CELL_TEXT_ALIGNMENT : @(NSTextAlignmentLeft)},
-                                      @{kASF_CELL_TITLE : @"Sample Phone No.", kASF_OPTION_CELL_TEXT_ALIGNMENT : @(NSTextAlignmentCenter)},
-                                      @{kASF_CELL_TITLE : @"Sample Gender", kASF_OPTION_CELL_TEXT_ALIGNMENT : @(NSTextAlignmentCenter)}],
-                                
-                                kASF_ROW_OPTIONS :
-                                    @{kASF_OPTION_BACKGROUND : [UIColor whiteColor],
-                                      kASF_OPTION_CELL_PADDING : @(5),
-                                      kASF_OPTION_CELL_BORDER_COLOR : [UIColor lightGrayColor]},
-                                
-                                @"some_other_data" : @(123)}];
-    }
-    
-    [_mTableWorkMsg setRows:_rowsArray];
-
-}
-
 #pragma mark - ASFTableViewDelegate
-- (void)ASFTableView:(ASFTableView *)tableView DidSelectRow:(NSDictionary *)rowDict WithRowIndex:(NSUInteger)rowIndex {
-    NSLog(@"%d == %d ", rowIndex,_mTableWorkMsg.selectedRowIndex);
-    NSLog(@"%@", rowDict);
-}
+
 - (id)initWithCoder:(NSCoder*)aDecoder
 {
     if(self = [super initWithCoder:aDecoder])
@@ -132,6 +45,7 @@
     }
     return self;
 }
+#pragma mark - show  popView
 - (IBAction)showSetMangerView:(UIButton *)sender {
    
     CGPoint point = CGPointMake(sender.frame.origin.x + sender.frame.size.width/2, sender.frame.origin.y + sender.frame.size.height);
@@ -182,9 +96,6 @@
                 }else{
                     [_alert dismissAlertView];
                 }*/
-                
-
-            
                 break;
             case 1:
                 NSLog(@"修改作业用户系统信息");
@@ -508,11 +419,12 @@
     
     [self initCtrl];
     if (g_workSystemUser) {
-        [self initWorkViews];
+       // 显示工作列表  [self initWorkViews];
+        
     }
     else
     {
-        [self initManageUserViews];
+        //显示设置用户列表 [self initManageUserViews];
     }
     
     [super viewDidLoad];

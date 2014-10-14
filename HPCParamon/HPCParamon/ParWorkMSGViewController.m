@@ -27,6 +27,7 @@
 @property (strong, nonatomic)AMSmoothAlertView * alert;
 @property (nonatomic, retain) NSMutableArray *rowsArray;
 @property (nonatomic, retain) NSMutableArray *rowsManageUserArray;
+@property (weak, nonatomic) IBOutlet UIView *mTitleView;
 
 @property (weak, nonatomic) IBOutlet ParCollectionView *mWorkCollectview;
 @property (strong, nonatomic)NSMutableArray *mdataMArr;// 数据源
@@ -161,9 +162,13 @@
 	}
 
 }
+#pragma mark -init Ctrl
 - (void)initCtrl
 {
-    //
+     //设置title的背景图片
+    /*UIImage*img =[UIImage imageNamed:@"tableTitile_green"];
+    [_mTitleView setBackgroundColor:[UIColor colorWithPatternImage:img]];*/
+     //
     NSMutableAttributedString *btnTitleAttributedString = [[NSMutableAttributedString alloc] initWithString:[NSString fontAwesomeIconStringForEnum:FAIconAlignJustify]];
     [btnTitleAttributedString addAttribute:NSFontAttributeName value:[UIFont fontWithName:kFontAwesomeFamilyName size:20] range:NSMakeRange(0, 1)];
     
@@ -424,16 +429,16 @@
     }
     
     [super viewDidLoad];
-    //[self.mWorkCollectview setUpCollection];
+    [self.mWorkCollectview setUpCollection];
 }
 
 
 #pragma mark - Collection View Data Source
-
+/*
 -(NSInteger)CollectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
     return self.mdataMArr.count;
 }
-/*
+
  -(UICollectionViewCell *)CollectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     
     static NSString *collectionCellID = @"WorkMsgCell";

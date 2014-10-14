@@ -110,6 +110,7 @@
 		E1C80AC719DA506E000B50CD /* PopoverView.m in Sources */ = {isa = PBXBuildFile; fileRef = E1C80AC619DA506E000B50CD /* PopoverView.m */; };
 		E1C80ACA19DA8C72000B50CD /* ParUpdatePwdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1C80AC919DA8C72000B50CD /* ParUpdatePwdViewController.m */; };
 		E1D5530D19EBD8A3008D6536 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = E1D5530C19EBD8A3008D6536 /* Reachability.m */; };
+		E1E1C25419ECC9390056AF2B /* ParButton.m in Sources */ = {isa = PBXBuildFile; fileRef = E1E1C25319ECC9390056AF2B /* ParButton.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -284,6 +285,8 @@
 		E1C80AC919DA8C72000B50CD /* ParUpdatePwdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParUpdatePwdViewController.m; sourceTree = "<group>"; };
 		E1D5530B19EBD8A3008D6536 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		E1D5530C19EBD8A3008D6536 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		E1E1C25219ECC9390056AF2B /* ParButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParButton.h; sourceTree = "<group>"; };
+		E1E1C25319ECC9390056AF2B /* ParButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParButton.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -620,6 +623,8 @@
 				E167699019EBA10400BA956C /* ParCollectionView.h */,
 				E167699119EBA10400BA956C /* ParCollectionView.m */,
 				E167698D19EB9D0900BA956C /* WorkMsgCell.h */,
+				E1E1C25219ECC9390056AF2B /* ParButton.h */,
+				E1E1C25319ECC9390056AF2B /* ParButton.m */,
 				E167698E19EB9D0900BA956C /* WorkMsgCell.m */,
 				E167698619EB9C3300BA956C /* CustomCellBackground.h */,
 				E167698719EB9C3300BA956C /* CustomCellBackground.m */,
@@ -857,6 +862,7 @@
 				E10BD95519C801B4005E1CFE /* AFURLConnectionOperation.m in Sources */,
 				E10CB9BA19D275D200F954F9 /* ANBlurredTableView.m in Sources */,
 				E16F827719E780E2003C15BA /* ASFTableViewPrivateGlobals.m in Sources */,
+				E1E1C25419ECC9390056AF2B /* ParButton.m in Sources */,
 				E1560A7719C52E1A001BE223 /* ParAppDelegate.m in Sources */,
 				E167698F19EB9D0900BA956C /* WorkMsgCell.m in Sources */,
 				E10BD95B19C8027F005E1CFE /* AFTwitterAPIClient.m in Sources */,

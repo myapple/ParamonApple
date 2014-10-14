@@ -11,8 +11,4 @@
 @interface ParCollectionView : UICollectionView<UICollectionViewDataSource,UICollectionViewDelegate>
 @property (strong, nonatomic)NSMutableArray *dataMArr;// 数据源
 -(void)setUpCollection;
-
--(UICollectionViewCell *)CollectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath;
--(NSInteger)CollectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section;
-    
 @end

@@ -9,7 +9,9 @@
 #import "ParCollectionView.h"
 #import "WorkMsgCell.h"
 @implementation ParCollectionView
-//numberOfItemsInSection
+
+
+
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
@@ -47,13 +49,14 @@
 
 
 #pragma mark - Collection View Data Source
--(NSInteger)CollectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
+
     return self.dataMArr.count;
 }
 
--(UICollectionViewCell *)CollectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     
-    static NSString *collectionCellID = @"WorkMsgCell";
+    static NSString *collectionCellID = @"WorkMsgCellID";
     WorkMsgCell *cell = (WorkMsgCell *)[collectionView dequeueReusableCellWithReuseIdentifier:collectionCellID forIndexPath:indexPath];
     
     //NSDictionary *dic    = self.dataMArr[indexPath.row];
@@ -65,6 +68,7 @@
     
     return cell;
 };
+
 /*
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.

@@ -11,4 +11,6 @@
 @interface ParCollectionView : UICollectionView<UICollectionViewDataSource,UICollectionViewDelegate>
 @property (strong, nonatomic)NSMutableArray *dataMArr;// 数据源
 -(void)setUpCollection;
+-(void)setDeletAttribuString:(UIButton *)btnButton  forColor:(UIColor *)color;
+-(void)setworkStateAttribuString:(UILabel *)label   forState:(BOOL) normal;
 @end

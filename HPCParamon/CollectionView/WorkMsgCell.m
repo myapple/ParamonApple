@@ -7,7 +7,7 @@
 //
 
 #import "WorkMsgCell.h"
-
+#import "NSString+FontAwesome.h"
 @implementation WorkMsgCell
 
 - (id)initWithFrame:(CGRect)frame
@@ -24,7 +24,6 @@
     if (self)
     {
         // change to our custom selected background view
-    
     }
     return self;
 }

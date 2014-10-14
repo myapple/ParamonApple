@@ -8,9 +8,8 @@
 
 #import "ParCollectionView.h"
 #import "WorkMsgCell.h"
+#import "NSString+FontAwesome.h"
 @implementation ParCollectionView
-
-
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -64,10 +63,41 @@
     cell.workID.text =workID;
     cell.workUser.text =@"aa";
     cell.endState.text =@"1" ;
-    [cell.Operation setTitle:@"delete" forState:UIControlStateNormal];
+    cell.Operation.tag=indexPath.row ;
+    [self setDeletAttribuString:cell.Operation forColor:[UIColor redColor]];
+    [self setworkStateAttribuString:cell.endState forState:TRUE];
+        return cell;
+}
+
+-(void)setDeletAttribuString:(UIButton *)btnButton  forColor:(UIColor *)color
+{
+    NSMutableAttributedString *attribuString =[[NSMutableAttributedString alloc] initWithString:[NSString fontAwesomeIconStringForEnum:FAIconTrash]];
+    [attribuString addAttribute:NSFontAttributeName value:[UIFont fontWithName:kFontAwesomeFamilyName size:20] range:NSMakeRange(0, 1)];
     
-    return cell;
-};
+    [attribuString addAttribute:NSForegroundColorAttributeName value:color range:NSMakeRange(0, 1)];
+    [btnButton setTitle:attribuString.string forState:UIControlStateNormal];
+    [btnButton setAttributedTitle:attribuString forState:UIControlStateNormal];
+}
+
+-(void)setworkStateAttribuString:(UILabel *)label   forState:(BOOL) normal
+{
+    NSMutableAttributedString *attribuString =[[NSMutableAttributedString alloc] initWithString:[NSString fontAwesomeIconStringForEnum:FAIconLightbulb]];
+    [attribuString addAttribute:NSFontAttributeName value:[UIFont fontWithName:kFontAwesomeFamilyName size:20] range:NSMakeRange(0, 1)];
+    if (normal) {
+        label.textColor=[UIColor greenColor];
+    }
+    else
+        label.textColor=[UIColor redColor];
+    label.font =[UIFont fontWithName:kFontAwesomeFamilyName size:20];
+    
+    label.text =attribuString.string;
+    
+}
+#pragma mark -UICollectionViewDelegate
+- (BOOL)collectionView:(UICollectionView *)collectionView shouldHighlightItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    return TRUE;
+}
 
 /*
 // Only override drawRect: if you perform custom drawing.

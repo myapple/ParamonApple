@@ -320,15 +320,20 @@
                                                     <rect key="frame" x="227" y="2" width="66" height="32"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="0.0"/>
-                                                    <state key="normal" title="Button" backgroundImage="white">
-                                                        <color key="titleShadowColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="0.0" colorSpace="calibratedRGB"/>
+                                                    <state key="normal" title="delete" backgroundImage="white">
+                                                        <color key="titleColor" red="0.85098046059999999" green="0.062745101750000004" blue="0.30196079609999998" alpha="1" colorSpace="deviceRGB"/>
+                                                        <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="clickBtn:" destination="zCW-us-yuE" eventType="touchUpInside" id="1SO-wk-1Oa"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
+                                            <outlet property="Operation" destination="A8y-17-EZ3" id="Wq7-kD-iIY"/>
                                             <outlet property="endState" destination="sLe-Me-NdC" id="8uA-7n-PQf"/>
                                             <outlet property="workID" destination="ogU-ce-bmX" id="gYa-2q-pdY"/>
                                             <outlet property="workUser" destination="o44-sr-Pfp" id="xRO-0u-koy"/>

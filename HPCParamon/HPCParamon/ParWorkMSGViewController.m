@@ -415,8 +415,7 @@
     NSLog(@"updateTime :%@" ,[workDetailData updateTime] );
     
     [self initCtrl];
-   
-    //[self setUpCollection];
+   self.mWorkCollectview.indicatorStyle = UIScrollViewIndicatorStyleWhite;    //[self setUpCollection];
     if (g_workSystemUser) {
        // 显示工作列表
         //[self initWorkViews];
@@ -472,6 +471,16 @@
     
 }
 */
+- (IBAction)clickBtn:(id)sender {
+
+    UIButton* mSender =(UIButton *)sender;
+    NSLog(@"发送删除 %d 请求",mSender.tag);
+    
+    [self.mWorkCollectview.dataMArr removeObjectAtIndex:mSender.tag];
+    [self.mWorkCollectview reloadData];
+    //
+
+}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];

@@ -623,9 +623,9 @@
 				E167699019EBA10400BA956C /* ParCollectionView.h */,
 				E167699119EBA10400BA956C /* ParCollectionView.m */,
 				E167698D19EB9D0900BA956C /* WorkMsgCell.h */,
+				E167698E19EB9D0900BA956C /* WorkMsgCell.m */,
 				E1E1C25219ECC9390056AF2B /* ParButton.h */,
 				E1E1C25319ECC9390056AF2B /* ParButton.m */,
-				E167698E19EB9D0900BA956C /* WorkMsgCell.m */,
 				E167698619EB9C3300BA956C /* CustomCellBackground.h */,
 				E167698719EB9C3300BA956C /* CustomCellBackground.m */,
 			);

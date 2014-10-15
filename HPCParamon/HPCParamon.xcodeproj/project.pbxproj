@@ -54,6 +54,11 @@
 		E114DE9A19D7D4130033D211 /* SSCheckBoxView.m in Sources */ = {isa = PBXBuildFile; fileRef = E114DE8419D7D4130033D211 /* SSCheckBoxView.m */; };
 		E114DE9C19D7E4100033D211 /* background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E114DE9B19D7E4100033D211 /* background.jpg */; };
 		E114DEA619D800E30033D211 /* ParSetFontStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = E114DEA519D800E30033D211 /* ParSetFontStyle.m */; };
+		E11D604B19EE1FD700E0CB79 /* ParMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E11D604A19EE1FD700E0CB79 /* ParMainViewController.m */; };
+		E11D604E19EE1FFA00E0CB79 /* ParWorkUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E11D604D19EE1FFA00E0CB79 /* ParWorkUserViewController.m */; };
+		E11D605119EE208500E0CB79 /* ParUserMsgCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = E11D605019EE208500E0CB79 /* ParUserMsgCollectionView.m */; };
+		E11D605419EE3CA500E0CB79 /* UserMsgCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E11D605319EE3CA500E0CB79 /* UserMsgCell.m */; };
+		E11D605719EE54FB00E0CB79 /* ParWorkMsgViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E11D605619EE54FB00E0CB79 /* ParWorkMsgViewController.m */; };
 		E127CA2E19D3EC0E0089F99A /* iCarousel.m in Sources */ = {isa = PBXBuildFile; fileRef = E127CA2D19D3EC0E0089F99A /* iCarousel.m */; };
 		E127CA3219D3ECA30089F99A /* ICarouseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E127CA3119D3ECA30089F99A /* ICarouseViewController.m */; };
 		E127CA3519D3F48A0089F99A /* page.png in Resources */ = {isa = PBXBuildFile; fileRef = E127CA3419D3F48A0089F99A /* page.png */; };
@@ -79,7 +84,6 @@
 		E1560A8B19C52E1A001BE223 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1560A6A19C52E1A001BE223 /* UIKit.framework */; };
 		E1560A9319C52E1A001BE223 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E1560A9119C52E1A001BE223 /* InfoPlist.strings */; };
 		E1560A9519C52E1A001BE223 /* HPCParamonTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E1560A9419C52E1A001BE223 /* HPCParamonTests.m */; };
-		E1560AA119C53AB0001BE223 /* ParWorkMSGViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1560A9F19C53AB0001BE223 /* ParWorkMSGViewController.m */; };
 		E167698B19EB9C3300BA956C /* CustomCellBackground.m in Sources */ = {isa = PBXBuildFile; fileRef = E167698719EB9C3300BA956C /* CustomCellBackground.m */; };
 		E167698F19EB9D0900BA956C /* WorkMsgCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E167698E19EB9D0900BA956C /* WorkMsgCell.m */; };
 		E167699219EBA10400BA956C /* ParCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = E167699119EBA10400BA956C /* ParCollectionView.m */; };
@@ -94,12 +98,6 @@
 		E16F1B6119D9554500B73631 /* info@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E16F1B5919D9554500B73631 /* info@2x.png */; };
 		E16F1B6319D9570400B73631 /* GPUImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E16F1B6219D9570400B73631 /* GPUImage.framework */; };
 		E16F1B6819D95EA700B73631 /* UIPopoverListView.m in Sources */ = {isa = PBXBuildFile; fileRef = E16F1B6719D95EA700B73631 /* UIPopoverListView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		E16F827419E780E2003C15BA /* ASFLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = E16F826B19E780E2003C15BA /* ASFLabel.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		E16F827519E780E2003C15BA /* ASFTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = E16F826D19E780E2003C15BA /* ASFTableView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		E16F827619E780E2003C15BA /* ASFTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E16F826F19E780E2003C15BA /* ASFTableViewCell.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		E16F827719E780E2003C15BA /* ASFTableViewPrivateGlobals.m in Sources */ = {isa = PBXBuildFile; fileRef = E16F827119E780E2003C15BA /* ASFTableViewPrivateGlobals.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		E16F827819E780E2003C15BA /* ASFTableViewPublicGlobals.m in Sources */ = {isa = PBXBuildFile; fileRef = E16F827319E780E2003C15BA /* ASFTableViewPublicGlobals.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		E16F827B19E781CB003C15BA /* ParWorkView.m in Sources */ = {isa = PBXBuildFile; fileRef = E16F827A19E781CB003C15BA /* ParWorkView.m */; };
 		E17E537919CFB31900DF4C42 /* ParWorkData.m in Sources */ = {isa = PBXBuildFile; fileRef = E17E537819CFB31900DF4C42 /* ParWorkData.m */; };
 		E17E537C19CFE9DD00DF4C42 /* ParNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E17E537B19CFE9DD00DF4C42 /* ParNavigationViewController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		E1840BF819D157D300C240D3 /* QBTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = E1840BF319D157D300C240D3 /* QBTitleView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -110,7 +108,6 @@
 		E1C80AC719DA506E000B50CD /* PopoverView.m in Sources */ = {isa = PBXBuildFile; fileRef = E1C80AC619DA506E000B50CD /* PopoverView.m */; };
 		E1C80ACA19DA8C72000B50CD /* ParUpdatePwdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1C80AC919DA8C72000B50CD /* ParUpdatePwdViewController.m */; };
 		E1D5530D19EBD8A3008D6536 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = E1D5530C19EBD8A3008D6536 /* Reachability.m */; };
-		E1E1C25419ECC9390056AF2B /* ParButton.m in Sources */ = {isa = PBXBuildFile; fileRef = E1E1C25319ECC9390056AF2B /* ParButton.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -194,6 +191,16 @@
 		E114DE9B19D7E4100033D211 /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background.jpg; sourceTree = "<group>"; };
 		E114DEA419D800E30033D211 /* ParSetFontStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParSetFontStyle.h; sourceTree = "<group>"; };
 		E114DEA519D800E30033D211 /* ParSetFontStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParSetFontStyle.m; sourceTree = "<group>"; };
+		E11D604919EE1FD700E0CB79 /* ParMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParMainViewController.h; sourceTree = "<group>"; };
+		E11D604A19EE1FD700E0CB79 /* ParMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParMainViewController.m; sourceTree = "<group>"; };
+		E11D604C19EE1FFA00E0CB79 /* ParWorkUserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParWorkUserViewController.h; sourceTree = "<group>"; };
+		E11D604D19EE1FFA00E0CB79 /* ParWorkUserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParWorkUserViewController.m; sourceTree = "<group>"; };
+		E11D604F19EE208500E0CB79 /* ParUserMsgCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParUserMsgCollectionView.h; sourceTree = "<group>"; };
+		E11D605019EE208500E0CB79 /* ParUserMsgCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParUserMsgCollectionView.m; sourceTree = "<group>"; };
+		E11D605219EE3CA500E0CB79 /* UserMsgCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserMsgCell.h; sourceTree = "<group>"; };
+		E11D605319EE3CA500E0CB79 /* UserMsgCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserMsgCell.m; sourceTree = "<group>"; };
+		E11D605519EE54FB00E0CB79 /* ParWorkMsgViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParWorkMsgViewController.h; sourceTree = "<group>"; };
+		E11D605619EE54FB00E0CB79 /* ParWorkMsgViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParWorkMsgViewController.m; sourceTree = "<group>"; };
 		E127CA2C19D3EC0E0089F99A /* iCarousel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iCarousel.h; sourceTree = "<group>"; };
 		E127CA2D19D3EC0E0089F99A /* iCarousel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iCarousel.m; sourceTree = "<group>"; };
 		E127CA3119D3ECA30089F99A /* ICarouseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICarouseViewController.m; sourceTree = "<group>"; };
@@ -232,8 +239,6 @@
 		E1560A9019C52E1A001BE223 /* HPCParamonTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "HPCParamonTests-Info.plist"; sourceTree = "<group>"; };
 		E1560A9219C52E1A001BE223 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		E1560A9419C52E1A001BE223 /* HPCParamonTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HPCParamonTests.m; sourceTree = "<group>"; };
-		E1560A9E19C53AB0001BE223 /* ParWorkMSGViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParWorkMSGViewController.h; sourceTree = "<group>"; };
-		E1560A9F19C53AB0001BE223 /* ParWorkMSGViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParWorkMSGViewController.m; sourceTree = "<group>"; };
 		E167698619EB9C3300BA956C /* CustomCellBackground.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomCellBackground.h; sourceTree = "<group>"; };
 		E167698719EB9C3300BA956C /* CustomCellBackground.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomCellBackground.m; sourceTree = "<group>"; };
 		E167698D19EB9D0900BA956C /* WorkMsgCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WorkMsgCell.h; sourceTree = "<group>"; };
@@ -255,18 +260,6 @@
 		E16F1B6219D9570400B73631 /* GPUImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GPUImage.framework; sourceTree = "<group>"; };
 		E16F1B6619D95EA700B73631 /* UIPopoverListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UIPopoverListView.h; path = PopoverListView/UIPopoverListView.h; sourceTree = "<group>"; };
 		E16F1B6719D95EA700B73631 /* UIPopoverListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UIPopoverListView.m; path = PopoverListView/UIPopoverListView.m; sourceTree = "<group>"; };
-		E16F826A19E780E2003C15BA /* ASFLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASFLabel.h; sourceTree = "<group>"; };
-		E16F826B19E780E2003C15BA /* ASFLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASFLabel.m; sourceTree = "<group>"; };
-		E16F826C19E780E2003C15BA /* ASFTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASFTableView.h; sourceTree = "<group>"; };
-		E16F826D19E780E2003C15BA /* ASFTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASFTableView.m; sourceTree = "<group>"; };
-		E16F826E19E780E2003C15BA /* ASFTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASFTableViewCell.h; sourceTree = "<group>"; };
-		E16F826F19E780E2003C15BA /* ASFTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASFTableViewCell.m; sourceTree = "<group>"; };
-		E16F827019E780E2003C15BA /* ASFTableViewPrivateGlobals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASFTableViewPrivateGlobals.h; sourceTree = "<group>"; };
-		E16F827119E780E2003C15BA /* ASFTableViewPrivateGlobals.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASFTableViewPrivateGlobals.m; sourceTree = "<group>"; };
-		E16F827219E780E2003C15BA /* ASFTableViewPublicGlobals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASFTableViewPublicGlobals.h; sourceTree = "<group>"; };
-		E16F827319E780E2003C15BA /* ASFTableViewPublicGlobals.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASFTableViewPublicGlobals.m; sourceTree = "<group>"; };
-		E16F827919E781CB003C15BA /* ParWorkView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParWorkView.h; sourceTree = "<group>"; };
-		E16F827A19E781CB003C15BA /* ParWorkView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParWorkView.m; sourceTree = "<group>"; };
 		E17E537719CFB31900DF4C42 /* ParWorkData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ParWorkData.h; path = HPCParamon/ParWorkData.h; sourceTree = "<group>"; };
 		E17E537819CFB31900DF4C42 /* ParWorkData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ParWorkData.m; path = HPCParamon/ParWorkData.m; sourceTree = "<group>"; };
 		E17E537A19CFE9DD00DF4C42 /* ParNavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParNavigationViewController.h; sourceTree = "<group>"; };
@@ -285,8 +278,6 @@
 		E1C80AC919DA8C72000B50CD /* ParUpdatePwdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParUpdatePwdViewController.m; sourceTree = "<group>"; };
 		E1D5530B19EBD8A3008D6536 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		E1D5530C19EBD8A3008D6536 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
-		E1E1C25219ECC9390056AF2B /* ParButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParButton.h; sourceTree = "<group>"; };
-		E1E1C25319ECC9390056AF2B /* ParButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParButton.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -496,8 +487,14 @@
 		E13EEBFE19E68EB2001AAB22 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				E11D604C19EE1FFA00E0CB79 /* ParWorkUserViewController.h */,
+				E11D604D19EE1FFA00E0CB79 /* ParWorkUserViewController.m */,
+				E11D604919EE1FD700E0CB79 /* ParMainViewController.h */,
+				E11D604A19EE1FD700E0CB79 /* ParMainViewController.m */,
 				E13EEBFF19E68EB2001AAB22 /* ParUIBaseViewController.h */,
 				E13EEC0019E68EB2001AAB22 /* ParUIBaseViewController.m */,
+				E11D605519EE54FB00E0CB79 /* ParWorkMsgViewController.h */,
+				E11D605619EE54FB00E0CB79 /* ParWorkMsgViewController.m */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -507,7 +504,6 @@
 			children = (
 				E1D5530A19EBD8A3008D6536 /* TestConnectNet */,
 				E167698319EB9C3300BA956C /* CollectionView */,
-				E16F826919E780E2003C15BA /* ASFTableView */,
 				E16F1B6419D95E3000B73631 /* View */,
 				E114DE6919D7D4130033D211 /* SSCheckBoxView */,
 				E12B55B619D5500D00995DED /* FontModel */,
@@ -563,13 +559,9 @@
 				E1C80AC819DA8C72000B50CD /* ParUpdatePwdViewController.h */,
 				E1C80AC919DA8C72000B50CD /* ParUpdatePwdViewController.m */,
 				E17E537A19CFE9DD00DF4C42 /* ParNavigationViewController.h */,
-				E16F827919E781CB003C15BA /* ParWorkView.h */,
-				E16F827A19E781CB003C15BA /* ParWorkView.m */,
 				E17E537B19CFE9DD00DF4C42 /* ParNavigationViewController.m */,
 				E10BD8EF19C7E20D005E1CFE /* ParLoginViewController.h */,
 				E10BD8F019C7E20D005E1CFE /* ParLoginViewController.m */,
-				E1560A9E19C53AB0001BE223 /* ParWorkMSGViewController.h */,
-				E1560A9F19C53AB0001BE223 /* ParWorkMSGViewController.m */,
 				E1560A7B19C52E1A001BE223 /* ParFirstViewController.h */,
 				E1560A7C19C52E1A001BE223 /* ParFirstViewController.m */,
 				E1560A7E19C52E1A001BE223 /* ParSecondViewController.h */,
@@ -620,14 +612,16 @@
 		E167698319EB9C3300BA956C /* CollectionView */ = {
 			isa = PBXGroup;
 			children = (
+				E11D604F19EE208500E0CB79 /* ParUserMsgCollectionView.h */,
+				E11D605019EE208500E0CB79 /* ParUserMsgCollectionView.m */,
 				E167699019EBA10400BA956C /* ParCollectionView.h */,
 				E167699119EBA10400BA956C /* ParCollectionView.m */,
 				E167698D19EB9D0900BA956C /* WorkMsgCell.h */,
 				E167698E19EB9D0900BA956C /* WorkMsgCell.m */,
-				E1E1C25219ECC9390056AF2B /* ParButton.h */,
-				E1E1C25319ECC9390056AF2B /* ParButton.m */,
 				E167698619EB9C3300BA956C /* CustomCellBackground.h */,
 				E167698719EB9C3300BA956C /* CustomCellBackground.m */,
+				E11D605219EE3CA500E0CB79 /* UserMsgCell.h */,
+				E11D605319EE3CA500E0CB79 /* UserMsgCell.m */,
 			);
 			path = CollectionView;
 			sourceTree = "<group>";
@@ -675,23 +669,6 @@
 				E16F1B6719D95EA700B73631 /* UIPopoverListView.m */,
 			);
 			name = PopoverListView;
-			sourceTree = "<group>";
-		};
-		E16F826919E780E2003C15BA /* ASFTableView */ = {
-			isa = PBXGroup;
-			children = (
-				E16F826A19E780E2003C15BA /* ASFLabel.h */,
-				E16F826B19E780E2003C15BA /* ASFLabel.m */,
-				E16F826C19E780E2003C15BA /* ASFTableView.h */,
-				E16F826D19E780E2003C15BA /* ASFTableView.m */,
-				E16F826E19E780E2003C15BA /* ASFTableViewCell.h */,
-				E16F826F19E780E2003C15BA /* ASFTableViewCell.m */,
-				E16F827019E780E2003C15BA /* ASFTableViewPrivateGlobals.h */,
-				E16F827119E780E2003C15BA /* ASFTableViewPrivateGlobals.m */,
-				E16F827219E780E2003C15BA /* ASFTableViewPublicGlobals.h */,
-				E16F827319E780E2003C15BA /* ASFTableViewPublicGlobals.m */,
-			);
-			path = ASFTableView;
 			sourceTree = "<group>";
 		};
 		E1C80AC419DA5056000B50CD /* PopView */ = {
@@ -846,28 +823,27 @@
 			buildActionMask = 2147483647;
 			files = (
 				E10BD95119C801B4005E1CFE /* AFJSONRequestOperation.m in Sources */,
+				E11D605719EE54FB00E0CB79 /* ParWorkMsgViewController.m in Sources */,
 				E114DE9919D7D4130033D211 /* UIHelpers.m in Sources */,
 				E10BD94F19C801B4005E1CFE /* AFHTTPRequestOperation.m in Sources */,
 				E16F1B6819D95EA700B73631 /* UIPopoverListView.m in Sources */,
 				E12D18F319C6EB5D00AF20F6 /* ParPrivateViewController.m in Sources */,
 				E1840BF819D157D300C240D3 /* QBTitleView.m in Sources */,
-				E16F827819E780E2003C15BA /* ASFTableViewPublicGlobals.m in Sources */,
 				E1C80AC719DA506E000B50CD /* PopoverView.m in Sources */,
 				E167698B19EB9C3300BA956C /* CustomCellBackground.m in Sources */,
 				E1C80ACA19DA8C72000B50CD /* ParUpdatePwdViewController.m in Sources */,
+				E11D604E19EE1FFA00E0CB79 /* ParWorkUserViewController.m in Sources */,
 				E16F1B5B19D9554500B73631 /* AMSmoothAlertView.m in Sources */,
+				E11D605119EE208500E0CB79 /* ParUserMsgCollectionView.m in Sources */,
 				E1560A7D19C52E1A001BE223 /* ParFirstViewController.m in Sources */,
 				E1840BFC19D1617000C240D3 /* UIBarButtonItem+Badge.m in Sources */,
 				E10BD95619C801B4005E1CFE /* AFXMLRequestOperation.m in Sources */,
 				E10BD95519C801B4005E1CFE /* AFURLConnectionOperation.m in Sources */,
 				E10CB9BA19D275D200F954F9 /* ANBlurredTableView.m in Sources */,
-				E16F827719E780E2003C15BA /* ASFTableViewPrivateGlobals.m in Sources */,
-				E1E1C25419ECC9390056AF2B /* ParButton.m in Sources */,
 				E1560A7719C52E1A001BE223 /* ParAppDelegate.m in Sources */,
 				E167698F19EB9D0900BA956C /* WorkMsgCell.m in Sources */,
 				E10BD95B19C8027F005E1CFE /* AFTwitterAPIClient.m in Sources */,
 				E16F1B5A19D9554500B73631 /* AMBouncingView.m in Sources */,
-				E16F827619E780E2003C15BA /* ASFTableViewCell.m in Sources */,
 				E13EEC0119E68EB2001AAB22 /* ParUIBaseViewController.m in Sources */,
 				E1560A8019C52E1A001BE223 /* ParSecondViewController.m in Sources */,
 				E1560A7319C52E1A001BE223 /* main.m in Sources */,
@@ -887,15 +863,13 @@
 				E10BD95219C801B4005E1CFE /* AFJSONUtilities.m in Sources */,
 				E127CA3219D3ECA30089F99A /* ICarouseViewController.m in Sources */,
 				E10CB9BB19D275D200F954F9 /* ANTableViewCell.m in Sources */,
-				E16F827419E780E2003C15BA /* ASFLabel.m in Sources */,
 				E12B55BC19D5500D00995DED /* UIFont+FontAwesome.m in Sources */,
-				E16F827519E780E2003C15BA /* ASFTableView.m in Sources */,
-				E1560AA119C53AB0001BE223 /* ParWorkMSGViewController.m in Sources */,
-				E16F827B19E781CB003C15BA /* ParWorkView.m in Sources */,
+				E11D605419EE3CA500E0CB79 /* UserMsgCell.m in Sources */,
 				E10CB9C519D2891100F954F9 /* UIImage+tintedImage.m in Sources */,
 				E12B55BB19D5500D00995DED /* NSString+FontAwesome.m in Sources */,
 				E1840BFA19D157D300C240D3 /* ViewController.m in Sources */,
 				E17E537C19CFE9DD00DF4C42 /* ParNavigationViewController.m in Sources */,
+				E11D604B19EE1FD700E0CB79 /* ParMainViewController.m in Sources */,
 				E10BD94E19C801B4005E1CFE /* AFHTTPClient.m in Sources */,
 				E114DEA619D800E30033D211 /* ParSetFontStyle.m in Sources */,
 			);

@@ -78,7 +78,7 @@
     }
     if ([self isSamePasswd]) {
         NSLog(@"发送新的密码到 服务器");
-        [self performSegueWithIdentifier:@"BackView" sender:sender];
+        [self performSegueWithIdentifier:@"BackViewSegue" sender:sender];
         return;
     }
     
@@ -86,7 +86,7 @@
 }
 
 - (IBAction)backMainView:(id)sender {
-    [self performSegueWithIdentifier:@"BackView" sender:sender];
+    [self performSegueWithIdentifier:@"BackViewSegue" sender:sender];
 }
 
 -(IBAction)focusToPasswdAgainFeild:(id)sender {

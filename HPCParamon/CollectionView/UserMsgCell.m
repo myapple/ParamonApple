@@ -1,14 +1,14 @@
 //
-//  ParWorkView.m
+//  UserMsgCell.m
 //  HPCParamon
 //
-//  Created by 张小静  on 14-10-10.
+//  Created by 张小静  on 14-10-15.
 //  Copyright (c) 2014年 张小静 . All rights reserved.
 //
 
-#import "ParWorkView.h"
+#import "UserMsgCell.h"
 
-@implementation ParWorkView
+@implementation UserMsgCell
 
 - (id)initWithFrame:(CGRect)frame
 {

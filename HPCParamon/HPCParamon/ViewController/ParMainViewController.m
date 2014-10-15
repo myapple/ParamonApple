@@ -1,59 +1,43 @@
 //
-//  ParWorkMSGViewController.m
+//  ParMainViewController.m
 //  HPCParamon
 //
-//  Created by 张小静  on 14-9-14.
+//  Created by 张小静  on 14-10-15.
 //  Copyright (c) 2014年 张小静 . All rights reserved.
 //
 
-#import "ParWorkMSGViewController.h"
+#import "ParMainViewController.h"
 #import "NSString+FontAwesome.h"
 #import "UIBarButtonItem+Badge.h"
 #import "AMSmoothAlertView.h"
-#import "PopoverView.h"
+
 
 #import "ICarouseViewController.h"
-#import "ParCollectionView.h"
-#import "WorkMsgCell.h"
-@interface ParWorkMSGViewController ()
-@property (weak, nonatomic) IBOutlet UIButton *btnSetUser;
-@property (weak, nonatomic) IBOutlet UIButton *btnAlarm;
-@property (weak, nonatomic) IBOutlet UIButton *btnWorkMsg;
-@property (weak, nonatomic) IBOutlet UIButton *btnTitle;
-@property (weak, nonatomic) IBOutlet UIButton *btnAlarmNum;
-@property (strong, nonatomic) IBOutlet ParWorkView *workView;
-
-
+@interface ParMainViewController ()
 @property (strong, nonatomic)AMSmoothAlertView * alert;
-@property (nonatomic, retain) NSMutableArray *rowsArray;
-@property (nonatomic, retain) NSMutableArray *rowsManageUserArray;
-@property (weak, nonatomic) IBOutlet UIView *mTitleView;
-
-@property (weak, nonatomic) IBOutlet ParCollectionView *mWorkCollectview;
-@property (strong, nonatomic)NSMutableArray *mdataMArr;// 数据源
 @end
 
-@implementation ParWorkMSGViewController
-@synthesize workDetailData;
-
-
-
-#pragma mark - show  popView
-- (IBAction)showSetMangerView:(UIButton *)sender {
-   
+@implementation ParMainViewController
+@synthesize workDetailMsg;
+@synthesize workText=_workText;
+@synthesize alarmText=_alarmText;
+@synthesize alarmDetailMsg;
+#pragma mark - set  popView
+- (PopoverView *)getSetMangerPopview:(UIButton *)sender {
+    
     CGPoint point = CGPointMake(sender.frame.origin.x + sender.frame.size.width/2, sender.frame.origin.y + sender.frame.size.height);
-
+    
     NSMutableAttributedString *userAttributedString = [[NSMutableAttributedString alloc] initWithString:[NSString fontAwesomeIconStringForEnum:FAIconUser]];
     [userAttributedString addAttribute:NSFontAttributeName value:[UIFont fontWithName:kFontAwesomeFamilyName size:8] range:NSMakeRange(0, 1)];
     //设置颜色
     [userAttributedString addAttribute:NSForegroundColorAttributeName value:[UIColor grayColor] range:NSMakeRange(0, 1)];
     //动态创建
-
+    
     NSString *item1 =[NSString stringWithFormat:@"%@ %@",userAttributedString.string,@" 修改密码"] ;
     
     
     NSString *item2 =[NSString stringWithFormat:@"%@ %@",userAttributedString.string,@" 修改作业系统用户信息"];
-
+    
     NSMutableAttributedString *helpAttributedString = [[NSMutableAttributedString alloc] initWithString:[NSString fontAwesomeIconStringForEnum:FAIconQuestionSign]];
     [helpAttributedString addAttribute:NSFontAttributeName value:[UIFont fontWithName:kFontAwesomeFamilyName size:8] range:NSMakeRange(0, 1)];
     //设置颜色
@@ -69,43 +53,16 @@
     //动态创建
     
     NSString *item4 =[NSString stringWithFormat:@"%@ %@",quitAttributedString.string,@" 退出"] ;
-   
-
+    
+    
     NSArray *titles = @[item1,item2,item3,item4];//, @"选项2", @"选项3"];
     
     PopoverView *pop = [[PopoverView alloc] initWithPoint:point titles:titles images:nil];
-    pop.selectRowAtIndex = ^(NSInteger index){
-        NSLog(@"select index:%d", index);
-        switch (index) {
-            case 0:
-                NSLog(@"修改 密码");
-                [self showUpdatePwdView:sender];
-                /*if (!_alert || !_alert.isDisplayed) {
-                    _alert = [[AMSmoothAlertView alloc]initDropAlertWithTitle:@"修改用户密码" andText:@"新密码\n\n重复新密码!\n\n" andCancelButton:YES forAlertType:AlertInfo];
-                    [_alert setTitleFont:[UIFont fontWithName:@"Verdana" size:25.0f]];
-                    
-                    _alert.cornerRadius = 3.0f;
-                    [_alert show];
-                }else{
-                    [_alert dismissAlertView];
-                }*/
-                break;
-            case 1:
-                NSLog(@"修改作业用户系统信息");
-                break;
-            case 2:
-                NSLog(@"帮助");
-                break;
-            case 3:
-                NSLog(@"退出");
-            default:
-                break;
-        }
-    };
-    [pop show];
+    return pop;
     
-   
-
+    
+    
+    
 }
 -(void)showUpdatePwdView:(id) sender
 {
@@ -117,34 +74,34 @@
     
     //[self showUpdatePwdView];
     /*ViewController *leftController = [theStoryBroad instantiateViewControllerWithIdentifier:@"UpdatePwdView"];
-    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:leftController];     //[destView show];
-    
-    ParUpdatePwdViewController *leftController = [theStoryBroad instantiateViewControllerWithIdentifier:@"UpdatePwdView"];
+     UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:leftController];     //[destView show];
+     
+     ParUpdatePwdViewController *leftController = [theStoryBroad instantiateViewControllerWithIdentifier:@"UpdatePwdView"];
      */
 }
 
-- (IBAction)loadWorkMsg:(id)sender {
+- (void)loadWorkMsg:(id)sender {
     
-   /* UIStoryboard* theStoryBroad = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    ParWorkMSGViewController* destView = [theStoryBroad instantiateViewControllerWithIdentifier:@"WorkMsgView"];
-    
-	[self.navigationController pushViewController:destView animated: YES];
-    */
-  //  [self performSegueWithIdentifier:@"WorkMsgView" sender:sender];
+    /* UIStoryboard* theStoryBroad = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+     ParWorkMSGViewController* destView = [theStoryBroad instantiateViewControllerWithIdentifier:@"WorkMsgView"];
+     
+     [self.navigationController pushViewController:destView animated: YES];
+     */
+    //  [self performSegueWithIdentifier:@"WorkMsgView" sender:sender];
     
 }
-- (IBAction)showAlarmMsgView:(id)sender {
+- (void)showAlarmMsgPopview:(id)sender {
     static int num=1;
     [self addAlarmText:(++num)];
     /*if (!_alert || !_alert.isDisplayed) {
-        _alert = [[AMSmoothAlertView alloc]initDropAlertWithTitle:@"Notice !" andText:@"告警信息1\n告警信息2\n告警信息3\n 告警信息3 \n  是否查看更多？!" andCancelButton:YES forAlertType:AlertInfo];
-        [_alert setTitleFont:[UIFont fontWithName:@"Verdana" size:25.0f]];
-        
-        _alert.cornerRadius = 3.0f;
-        [_alert show];
-    }else{
-        [_alert dismissAlertView];
-    }*/
+     _alert = [[AMSmoothAlertView alloc]initDropAlertWithTitle:@"Notice !" andText:@"告警信息1\n告警信息2\n告警信息3\n 告警信息3 \n  是否查看更多？!" andCancelButton:YES forAlertType:AlertInfo];
+     [_alert setTitleFont:[UIFont fontWithName:@"Verdana" size:25.0f]];
+     
+     _alert.cornerRadius = 3.0f;
+     [_alert show];
+     }else{
+     [_alert dismissAlertView];
+     }*/
     [self popClickAction:sender];
     
     
@@ -160,15 +117,15 @@
 			NSLog(@"Cancel button touched!");
 		}
 	}
-
+    
 }
 #pragma mark -init Ctrl
-- (void)initCtrl
+- (void)initCtrl:(UIViewController *) mViewController andTitle: (UIButton *)_btnTitle andAlarmNum:_btnAlarmNum andAlarm:(UIButton *)_btnAlarm  andWorkMsg:(UIButton *)_btnWorkMsg  andSetUser:(UIButton *)_btnSetUser
 {
-     //设置title的背景图片
+    //设置title的背景图片
     /*UIImage*img =[UIImage imageNamed:@"tableTitile_green"];
-    [_mTitleView setBackgroundColor:[UIColor colorWithPatternImage:img]];*/
-     //
+     [_mTitleView setBackgroundColor:[UIColor colorWithPatternImage:img]];*/
+    //
     NSMutableAttributedString *btnTitleAttributedString = [[NSMutableAttributedString alloc] initWithString:[NSString fontAwesomeIconStringForEnum:FAIconAlignJustify]];
     [btnTitleAttributedString addAttribute:NSFontAttributeName value:[UIFont fontWithName:kFontAwesomeFamilyName size:20] range:NSMakeRange(0, 1)];
     
@@ -193,7 +150,7 @@
      UIButtonTypeInfoDark,
      UIButtonTypeContactAdd,
      */
-     CALayer *backLayer = [CALayer layer];
+    CALayer *backLayer = [CALayer layer];
     
     backLayer.backgroundColor = [UIColor orangeColor].CGColor;
     backLayer.bounds = CGRectMake(10, 10, 20, 20); //设置layer的区域
@@ -207,8 +164,8 @@
     [_alarmText setTitle:@"+41" forState:UIControlStateNormal];
     backLayer.contents = (id)_alarmText;
     
-    [self.view.layer addSublayer:backLayer];
-    [self.view addSubview:_alarmText];
+    [mViewController.view.layer addSublayer:backLayer];
+    [mViewController.view addSubview:_alarmText];
     //定义button按钮在frame上的坐标（位置），和这个按钮的宽／高
     
     
@@ -217,7 +174,7 @@
     [_btnAlarm setTitle:btnAlarmAttributedString.string forState:UIControlStateNormal];
     [_btnAlarm setAttributedTitle:btnAlarmAttributedString forState:UIControlStateNormal];
     
-
+    
     //作业信息
     
     NSMutableAttributedString *btnWorkAttributedString = [[NSMutableAttributedString alloc] initWithString:[NSString fontAwesomeIconStringForEnum:FAIconEnvelope]];
@@ -227,14 +184,14 @@
     [btnWorkAttributedString addAttribute:NSForegroundColorAttributeName value:[UIColor whiteColor] range:NSMakeRange(0, 1)];
     [_btnWorkMsg setTitle:btnWorkAttributedString.string forState:UIControlStateNormal];
     [_btnWorkMsg setAttributedTitle:btnWorkAttributedString forState:UIControlStateNormal];
-
+    
     CALayer *workLayer = [CALayer layer];
     
     workLayer.backgroundColor = [UIColor orangeColor].CGColor;
     workLayer.bounds = CGRectMake(10, 10, 20, 20); //设置layer的区域
     workLayer.position = CGPointMake(_btnWorkMsg.frame.origin.x+_btnWorkMsg.frame.size.width-CGRectGetHeight(workLayer.frame)+5 , _btnWorkMsg.frame.origin.y+CGRectGetHeight(workLayer.frame)); //设置layer坐标
     [workLayer setCornerRadius:CGRectGetHeight(workLayer.frame)/2];
-                                               
+    
     _workText=[[UIButton alloc] init];
     [_workText setFrame:workLayer.frame];
     [_workText setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
@@ -242,9 +199,9 @@
     [_workText setTitle:@"+1" forState:UIControlStateNormal];
     workLayer.contents = (id)_workText;
     
-    [self.view.layer addSublayer:workLayer];
-    [self.view addSubview:_workText];
-
+    [mViewController.view.layer addSublayer:workLayer];
+    [mViewController.view addSubview:_workText];
+    
     //设置按钮
     NSMutableAttributedString *btnSetAttributedString = [[NSMutableAttributedString alloc] initWithString:[NSString fontAwesomeIconStringForEnum:FAIconCog]];
     [btnSetAttributedString addAttribute:NSFontAttributeName value:[UIFont fontWithName:kFontAwesomeFamilyName size:20] range:NSMakeRange(0, 1)];
@@ -255,22 +212,22 @@
     [_btnSetUser setAttributedTitle:btnSetAttributedString forState:UIControlStateNormal];
     
     //动态创建
-
+    
     UIButton* barLeft =[UIButton buttonWithType:UIButtonTypeSystem];
-
+    
     [barLeft setFrame:CGRectMake(0,_btnAlarm.frame.origin.y,_btnAlarm.frame.origin.x,_btnAlarm.frame.size.height)];
     [barLeft setBackgroundColor:[UIColor colorWithRed:48/255.0 green:105/255.0 blue:140/255.0 alpha:1.0]];
     
-    [self.view addSubview:barLeft];
+    [mViewController.view addSubview:barLeft];
     
     UIButton* barRight =[UIButton buttonWithType:UIButtonTypeSystem];
     //int width =self.view.frame.size.width-barLeft.frame.size.width-_btnAlarm.frame.size.width-_btnSetUser.frame.size.width-_btnWorkMsg.frame.size.width;
     [barRight setFrame:CGRectMake(_btnSetUser.frame.origin.x+_btnSetUser.frame.size.width,_btnSetUser.frame.origin.y,barLeft.frame.size.width,_btnAlarm.frame.size.height)];
     [barRight setBackgroundColor:[UIColor colorWithRed:48/255.0 green:105/255.0 blue:140/255.0 alpha:1.0]];
     
-    [self.view addSubview:barRight];
-
-
+    [mViewController.view addSubview:barRight];
+    
+    
 }
 #pragma Alarm 相关的设置
 - (void)addAlarmText:(int) msgNum
@@ -298,20 +255,21 @@
 - (UITableViewCell *)popoverListView:(UIPopoverListView *)popoverListView
                     cellForIndexPath:(NSIndexPath *)indexPath
 {
-   // static NSString *identifier = @"cell";
+    // static NSString *identifier = @"cell";
+    [self getAlarmMsg];
     UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"🔔告警信息"];
     int row = indexPath.row;
     if(row == 0){
-        cell.textLabel.text = @"告警信息1";
+        cell.textLabel.text =alarmDetailMsg[0];
         cell.imageView.image = [UIImage imageNamed:@"msgTip"];
     }else if (row == 1){
-        cell.textLabel.text = @"告警信息2";
+        cell.textLabel.text = alarmDetailMsg[1];
         cell.imageView.image = [UIImage imageNamed:@"msgTip"];
     }else if (row == 2){
-        cell.textLabel.text = @"告警信息3";
+        cell.textLabel.text = alarmDetailMsg[2];
         cell.imageView.image = [UIImage imageNamed:@"msgTip"];
     }else if (row == 3){
-        cell.textLabel.text = @"告警信息4";
+        cell.textLabel.text =alarmDetailMsg[3];
         cell.imageView.image = [UIImage imageNamed:@"msgTip"];
     }
     else  {
@@ -320,7 +278,7 @@
         cell.textColor =[UIColor blueColor];
         
         cell.textLabel.text = @"查看所有未读告警信息➡";
-       // cell.imageView.image = [UIImage imageNamed:@"msgTip"];
+        // cell.imageView.image = [UIImage imageNamed:@"msgTip"];
     }
     
     return cell;
@@ -329,8 +287,26 @@
 - (NSInteger)popoverListView:(UIPopoverListView *)popoverListView
        numberOfRowsInSection:(NSInteger)section
 {
-    return 5;
+    return AlARMMSG_SHOWNUM;
 }
+
+#pragma mark - getAlarmMsgFromServer
+-(void)getAlarmMsg
+{
+    [alarmDetailMsg removeAllObjects];
+    
+    //获取告警数据
+    //..........
+    
+    //Test Data
+    NSString *alarmMsg =@"告警信息";
+    [alarmDetailMsg addObject:alarmMsg];
+    [alarmDetailMsg addObject:alarmMsg];
+    [alarmDetailMsg addObject:alarmMsg];
+    [alarmDetailMsg addObject:alarmMsg];
+    
+}
+
 
 #pragma mark - UIPopoverListViewDelegate
 - (void)popoverListView:(UIPopoverListView *)popoverListView
@@ -338,8 +314,7 @@
 {
     NSLog(@"%s : %d", __func__, indexPath.row);
     if (indexPath.row==4) {
-        // 跳转告警信息 页面
-        
+        // 跳转告警信息 页面      
         
     }
     
@@ -352,42 +327,28 @@
 }
 
 
-
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-- (void)getWorkMSGformServer:(NSString *)pageSize andPage:(NSString *)page
+- (void)getMSGfromServer:(NSString *) mPort forSize: (NSString *)pageSize andPage:(NSString *)page
 {
     //创建实例对象
     if (g_userKey==nil) {
-       NSLog(@"%@g_userKey=",g_userKey);
+        NSLog(@"%@g_userKey=",g_userKey);
         return;
     }
-   
+    
     NSDictionary *dictWork =@{@"userKey":g_userKey,@"size":pageSize,@"no":page};
-   
-    [[AFTwitterAPIClient sharedClient] postPath:g_getWorkMSGPort parameters:dictWork success:^(AFHTTPRequestOperation *operation, id JSON)
+    
+    [[AFTwitterAPIClient sharedClient] postPath:mPort parameters:dictWork success:^(AFHTTPRequestOperation *operation, id JSON)
      {
          
-         
          NSDictionary* dict =(NSDictionary* )JSON;
-        
-         _workDetailMsg =dict;
          
-         [workDetailData setAllMsgValue:dict];
-        
-         NSLog(@"%d",[workDetailData print]);
+         workDetailMsg =dict;
          //[_workDetailData setAllMsgValue:dict];
-         NSString * updatetime=_workDetailMsg[@"entityByRequest"][@"updateDatetime"];
+         NSString * updatetime=workDetailMsg[@"entityByRequest"][@"updateDatetime"];
          NSLog(@"updatetime :%@",updatetime);
          
          
-                  
+         
      } failure:^(AFHTTPRequestOperation *operation, NSError *error)
      {
 #if __IPHONE_OS_VERSION_MIN_REQUIRED
@@ -397,96 +358,42 @@
 #endif
          return;
      }];
-
+    
 }
+
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        // Custom initialization
+    }
+    return self;
+}
+
 - (void)viewDidLoad
 {
-    /*UITableView *tv=[[UITableView alloc]initWithFrame:CGRectMake(0,44, 320, 416) style:UITableViewStylePlain];
-    self.mTableManageUser = tv;
-    
-    [_mTableManageUser setDelegate:self];
-    [_mTableManageUser setDataSource:self];
-    [self.view addSubview:_mTableManageUser];
-    */    
-    workDetailData=[[ParWorkData alloc ] init];
-    NSLog(@"%d",[workDetailData print]);
-    [self getWorkMSGformServer:@"10" andPage:@"1"];
-    //[self sendMsgToServer:g_getWorkMSGPort andParameters:dictCheck];
-    NSLog(@"updateTime :%@" ,[workDetailData updateTime] );
-    
-    [self initCtrl];
-   self.mWorkCollectview.indicatorStyle = UIScrollViewIndicatorStyleWhite;    //[self setUpCollection];
-    if (g_workSystemUser) {
-       // 显示工作列表
-        //[self initWorkViews];
-       // [self.mWorkCollectview  setUpCollection];
-        
-    }
-    else
-    {
-        //显示设置用户列表 [self initManageUserViews];
-    }
-    
     [super viewDidLoad];
-    [self.mWorkCollectview setUpCollection];
+    // Do any additional setup after loading the view.
+    alarmDetailMsg =[[NSMutableArray alloc] init ];
 }
 
-
-#pragma mark - Collection View Data Source
-/*
--(NSInteger)CollectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-    return self.mdataMArr.count;
-}
-
- -(UICollectionViewCell *)CollectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
-    
-    static NSString *collectionCellID = @"WorkMsgCell";
-    WorkMsgCell *cell = (WorkMsgCell *)[collectionView dequeueReusableCellWithReuseIdentifier:collectionCellID forIndexPath:indexPath];
-    
-    //NSDictionary *dic    = self.mdataMArr[indexPath.row];
-    NSString * workID = [NSString stringWithFormat:@"%@",_mdataMArr[indexPath.row]];
-    cell.workID.text =workID;
-    cell.workUser.text =@"aa";
-    cell.endState.text =@"1" ;
-    [cell.Operation setTitle:@"delete" forState:UIControlStateNormal];
-    
-    return cell;
-};
-
--(void)setUpCollection{
-    self.mdataMArr = [NSMutableArray array];
-    int testID =0;
-    testID++;
-   // while (testID <=20) {
-       ////
-     [_mdataMArr addObject:@"1"];
-     [_mdataMArr addObject:@"2"];
-     [_mdataMArr addObject:@"3"];
-     [_mdataMArr addObject:@"4"];
-    
-    
-    self.mWorkCollectview.delegate = self;
-    self.mWorkCollectview.dataSource = self;
-    
-    
-}
-*/
-- (IBAction)clickBtn:(id)sender {
-
-    UIButton* mSender =(UIButton *)sender;
-    NSLog(@"发送删除 %d 请求",mSender.tag);
-    
-    [self.mWorkCollectview.dataMArr removeObjectAtIndex:mSender.tag];
-    [self.mWorkCollectview reloadData];
-    //
-    //当rows 为0 时 删除标题
-    
-
-}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+
+
+/*
+#pragma mark - Navigation
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+}
+*/
 
 @end

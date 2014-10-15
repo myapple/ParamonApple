@@ -10,7 +10,7 @@
 
 @implementation ParAppDelegate
 NSString * g_userKey;
-BOOL  g_workSystemUser =TRUE;
+BOOL  g_workSystemUser =FALSE;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {   

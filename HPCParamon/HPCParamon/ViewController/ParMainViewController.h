@@ -11,14 +11,18 @@
 #import "PopoverView.h"
 #import "NSString+FontAwesome.h"
 #define AlARMMSG_SHOWNUM 5
+#import "ParWorkData.h"
 @interface ParMainViewController : UIViewController <UIPopoverListViewDataSource, UIPopoverListViewDelegate>
 
 @property(nonatomic,retain) UIButton *workText;
 @property(nonatomic,retain) UIButton *alarmText;
 
-@property (strong,nonatomic) NSDictionary* workDetailMsg;
+@property (strong,nonatomic) ParWorkData* workDetailMsg;
 @property (strong,nonatomic) NSMutableArray *alarmDetailMsg;
 - (void)initCtrl:(UIViewController *) mViewController andTitle: (UIButton *)_btnTitle andAlarmNum:_btnAlarmNum andAlarm:(UIButton *)_btnAlarm  andWorkMsg:(UIButton *)_btnWorkMsg  andSetUser:(UIButton *)_btnSetUser
 ;
 - (PopoverView *)getSetMangerPopview:(UIButton *)sender ;
+- (PopoverView *)getUnNormalPopview:(UIButton *)sender ;
+-(void)showMessageBox:(NSString*) title andText:text andCancel:(BOOL)isHave;
+
 @end

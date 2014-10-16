@@ -59,11 +59,6 @@
     [pop show];
 }
 
--(void)showUpdatePwdView:(id) sender{
-    
-    [self performSegueWithIdentifier:@"UpdatePwdView" sender:sender];
-    
-}
 
 - (IBAction)showAlarmMsgView:(id)sender {
     static int num=1;
@@ -72,6 +67,31 @@
     
     
 }
+- (IBAction)showUnNormalPopView:(id)sender {
+    PopoverView *popView =[super getUnNormalPopview:sender];
+    popView.selectRowAtIndex = ^(NSInteger index){
+        NSLog(@"select index:%d", index);
+        switch (index) {
+            case 0:
+                NSLog(@"删除所有异常作业消息");
+                
+                break;
+            default:
+                break;
+        }
+    };
+    
+    
+    [popView show];
+    
+}
+
+-(void)showUpdatePwdView:(id) sender{
+    
+    [self performSegueWithIdentifier:@"UpdatePwdView" sender:sender];
+    
+}
+
 #pragma Alarm 相关的设置
 - (void)addAlarmText:(int) msgNum
 {
@@ -121,15 +141,22 @@
     UIButton* mSender =(UIButton *)sender;
     NSLog(@"发送删除 %d 请求",mSender.tag);
     
+    [super showMessageBox:@"消息" andText:@"删除成功" andCancel:FALSE];
+    
     [self.mWorkCollectview.dataMArr removeObjectAtIndex:mSender.tag];
     [self.mWorkCollectview reloadData];
     if([self.mWorkCollectview.dataMArr count]==0)
     {
         _mCollectionTitle.hidden = YES;
     }
+
+
+}
+- (IBAction)textValueChanged:(id)sender {
+    UITextField * workUser =(UITextField * )sender;
+    //self.mWorkCollectview.workDetailMsg
+    //发送给服务器 把修改的数据
     
-
-
 }
 
 -(void)initCollectionView{

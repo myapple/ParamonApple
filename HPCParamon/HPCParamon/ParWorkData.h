@@ -17,6 +17,7 @@
 @property (nonatomic) int  totalCount;
 @property (nonatomic) int  totalPage ;
 @property (strong ,nonatomic) NSString * updateTime;
+@property (strong ,nonatomic) NSString * endTime;
 -(void)setAllMsgValue:(NSDictionary *) dataSource;
 -(int )print;
 @end

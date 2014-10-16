@@ -28,7 +28,7 @@
     NSLog(@"%@",g_userKey);
     NSDictionary *dictWork =@{@"userKey":g_userKey,@"size":pageSize,@"no":page};
     
-    [[AFTwitterAPIClient sharedClient] postPath:g_getWorkMSGPort parameters:dictWork success:^(AFHTTPRequestOperation *operation, id JSON)
+    [[AFTwitterAPIClient sharedClient] postPath:WorkMSGApiPort parameters:dictWork success:^(AFHTTPRequestOperation *operation, id JSON)
      {
          
          NSDictionary* dict =(NSDictionary* )JSON;

@@ -4,8 +4,10 @@
 
 //static NSString * const kAFTwitterAPIBaseURLString = @"http://api.twitter.com/1/";
 //static NSString * const kAFTwitterAPIBaseURLString = @"http://118.26.72.28:8080/PARAMON_WEB/";
-static NSString * const kAFTwitterAPIBaseURLString = @"http://172.18.2.131:8080/PARAMON_WEB/";
+//static NSString * const kAFTwitterAPIBaseURLString = @"http://172.18.2.131:8080/PARAMON_WEB/";
 //checkUser-USER?userName=admin&password=Para@2014";
+static NSString * const kAFTwitterAPIBaseURLString = @"http://172.18.4.34:8080/PARAMON_WEB/";
+
 @implementation AFTwitterAPIClient
 
 + (AFTwitterAPIClient *)sharedClient {

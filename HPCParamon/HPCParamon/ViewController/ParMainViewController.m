@@ -15,6 +15,8 @@
 #import "ICarouseViewController.h"
 @interface ParMainViewController ()
 @property (strong, nonatomic)AMSmoothAlertView * alert;
+@property (strong, nonatomic)NSMutableArray* unNormalWork;
+
 @end
 
 @implementation ParMainViewController
@@ -64,31 +66,71 @@
     
     
 }
+
+#pragma mark - get UnNormal Pop view
+- (PopoverView *)getUnNormalPopview:(UIButton *)sender{
+    
+    [self getUnNormalWorkMsg];
+    CGPoint point = CGPointMake(sender.frame.origin.x + sender.frame.size.width/2, sender.frame.origin.y + sender.frame.size.height);
+    
+    NSMutableAttributedString *eMailAttributedString = [[NSMutableAttributedString alloc] initWithString:[NSString fontAwesomeIconStringForEnum:FAIconUser]];
+    [eMailAttributedString addAttribute:NSFontAttributeName value:[UIFont fontWithName:kFontAwesomeFamilyName size:8] range:NSMakeRange(0, 1)];
+    //设置颜色
+    [eMailAttributedString addAttribute:NSForegroundColorAttributeName value:[UIColor grayColor] range:NSMakeRange(0, 1)];
+    //动态创建
+    
+    NSString *item1 =[NSString stringWithFormat:@"%@ %d%@",eMailAttributedString.string,[_unNormalWork count],@" 作业任务消息"];
+    
+    NSMutableAttributedString *clockAttributedString = [[NSMutableAttributedString alloc] initWithString:[NSString fontAwesomeIconStringForEnum:FAIconQuestionSign]];
+    [clockAttributedString addAttribute:NSFontAttributeName value:[UIFont fontWithName:kFontAwesomeFamilyName size:8] range:NSMakeRange(0, 1)];
+    //设置颜色
+    [clockAttributedString addAttribute:NSForegroundColorAttributeName value:[UIColor grayColor] range:NSMakeRange(0, 1)];
+    NSMutableArray  *titles =[[NSMutableArray alloc]initWithCapacity:([_unNormalWork count]+1)];
+    [titles addObject:item1];
+    //动态创建
+    for (NSArray *workmsg in _unNormalWork) {
+        NSString *item2 =[NSString stringWithFormat:@"作业%@异常结束%@ %@",workmsg[0],clockAttributedString.string,workmsg[1]] ;
+
+        [titles addObject:item2];
+    }
+   /* for (NSDictionary *workmsg in _unNormalWork) {
+        NSString *item2 =[NSString stringWithFormat:@"作业%@异常结束\n%@ %@",[workmsg valueForKeyPath:@"userName"],clockAttributedString.string,@"xxx-xx-xx"] ;
+        
+        [titles addObject:item2];
+    }
+*/
+    PopoverView *pop = [[PopoverView alloc] initWithPoint:point titles:titles images:nil];
+    return pop;
+    
+}
+
+#pragma mark -get UnNormal end workMessage from Server
+-(void)getUnNormalWorkMsg
+{
+    [_unNormalWork removeAllObjects];
+    
+    //获取异常作业结束数据
+    if ([workDetailMsg.workData count]==0) {
+        [self getMSGfromServer:WorkMSGApiPort forSize:nil andPage:nil];
+    }
+    
+    for (NSArray *workmsg in workDetailMsg.workData) {
+        int endstate=(int)workmsg[ENDSTATEIndex];
+        if (endstate==ENDUnNorMalMark) {
+            NSString* workID=workDetailMsg.workData[WORKIDIIndex];
+            NSString* endTime=workDetailMsg.endTime;
+            NSArray *msg =@[workID,endTime];
+            [_unNormalWork addObject:msg];
+            [_unNormalWork addObject:msg];
+            
+        }
+        
+    }
+
+}
 -(void)showUpdatePwdView:(id) sender
 {
     [self performSegueWithIdentifier:@"UpdatePwdView" sender:sender];
-    // UIStoryboard* theStoryBroad = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    //ParUpdatePwdViewController* destView = [theStoryBroad instantiateViewControllerWithIdentifier:@"UpdatePwdView"];
-    //ParUpdatePwdViewController *destView =[[ParUpdatePwdViewController alloc] init];
-	//[self.navigationController pushViewController:destView animated: YES];
-    
-    //[self showUpdatePwdView];
-    /*ViewController *leftController = [theStoryBroad instantiateViewControllerWithIdentifier:@"UpdatePwdView"];
-     UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:leftController];     //[destView show];
-     
-     ParUpdatePwdViewController *leftController = [theStoryBroad instantiateViewControllerWithIdentifier:@"UpdatePwdView"];
-     */
-}
-
-- (void)loadWorkMsg:(id)sender {
-    
-    /* UIStoryboard* theStoryBroad = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-     ParWorkMSGViewController* destView = [theStoryBroad instantiateViewControllerWithIdentifier:@"WorkMsgView"];
-     
-     [self.navigationController pushViewController:destView animated: YES];
-     */
-    //  [self performSegueWithIdentifier:@"WorkMsgView" sender:sender];
-    
 }
 - (void)showAlarmMsgPopview:(id)sender {
     static int num=1;
@@ -107,6 +149,19 @@
     
 }
 
+-(void)showMessageBox:(NSString*) title andText:text andCancel:(BOOL)isHave
+{
+    if (!_alert || !_alert.isDisplayed) {
+     _alert = [[AMSmoothAlertView alloc]initDropAlertWithTitle:title andText:text andCancelButton:isHave forAlertType:AlertInfo];
+     [_alert setTitleFont:[UIFont fontWithName:@"Verdana" size:25.0f]];
+     
+     _alert.cornerRadius = 3.0f;
+     [_alert show];
+     }else{
+     [_alert dismissAlertView];
+     }
+
+}
 #pragma mark - Delegates
 - (void)alertView:(AMSmoothAlertView *)alertView didDismissWithButton:(UIButton *)button {
 	if (alertView == _alert) {
@@ -167,7 +222,6 @@
     [mViewController.view.layer addSublayer:backLayer];
     [mViewController.view addSubview:_alarmText];
     //定义button按钮在frame上的坐标（位置），和这个按钮的宽／高
-    
     
     
     [btnAlarmAttributedString addAttribute:NSForegroundColorAttributeName value:[UIColor whiteColor] range:NSMakeRange(0, 1)];
@@ -297,7 +351,9 @@
     
     //获取告警数据
     //..........
+    //[self getMSGfromServer:AlarmMSGApiPort forSize:nil andPage:nil];
     
+    //.......
     //Test Data
     NSString *alarmMsg =@"告警信息";
     [alarmDetailMsg addObject:alarmMsg];
@@ -334,20 +390,22 @@
         NSLog(@"%@g_userKey=",g_userKey);
         return;
     }
-    
     NSDictionary *dictWork =@{@"userKey":g_userKey,@"size":pageSize,@"no":page};
-    
     [[AFTwitterAPIClient sharedClient] postPath:mPort parameters:dictWork success:^(AFHTTPRequestOperation *operation, id JSON)
      {
+         if (JSON==nil) {
+             NSLog(@"请求成功,无返回数据");
+             [self showMessageBox:@"消息" andText:@"获取作业信息失败" andCancel:FALSE];
+             return ;
+         }
+         id myRequest = [NSJSONSerialization JSONObjectWithData:JSON options:NSJSONReadingMutableContainers error:nil];
+         if ([myRequest isKindOfClass:[NSDictionary class]]){
+             NSDictionary *dict = (NSDictionary *)myRequest;
+             //将数据封装到 ParWorkData 类里面
+             [workDetailMsg setAllMsgValue:dict];
+             NSLog(@"获取%@端口数据：%@",mPort,dict);
          
-         NSDictionary* dict =(NSDictionary* )JSON;
-         
-         workDetailMsg =dict;
-         //[_workDetailData setAllMsgValue:dict];
-         NSString * updatetime=workDetailMsg[@"entityByRequest"][@"updateDatetime"];
-         NSLog(@"updatetime :%@",updatetime);
-         
-         
+         }
          
      } failure:^(AFHTTPRequestOperation *operation, NSError *error)
      {
@@ -374,7 +432,10 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    // 初始化各个数组
     alarmDetailMsg =[[NSMutableArray alloc] init ];
+    _unNormalWork =[[NSMutableArray alloc] init ];
+    workDetailMsg =[[ParWorkData alloc] init];
 }
 
 - (void)didReceiveMemoryWarning

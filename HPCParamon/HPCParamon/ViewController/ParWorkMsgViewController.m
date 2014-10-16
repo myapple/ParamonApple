@@ -55,17 +55,37 @@
     [pop show];
 }
 
--(void)showUpdatePwdView:(id) sender{
-    
-    [self performSegueWithIdentifier:@"UpdatePwdView" sender:sender];
-    
-}
+
 
 - (IBAction)showAlarmMsgView:(id)sender {
     static int num=1;
     [self addAlarmText:(++num)];
     [self popClickAction:sender];
     
+    
+}
+- (IBAction)showUnNormalPopView:(id)sender {
+    PopoverView *popView =[super getUnNormalPopview:sender];
+    popView.selectRowAtIndex = ^(NSInteger index){
+        NSLog(@"select index:%d", index);
+        switch (index) {
+            case 0:
+                NSLog(@"删除所有异常作业消息");
+                
+                break;
+            default:
+                break;
+        }
+    };
+    
+    
+    [popView show];
+    
+}
+
+-(void)showUpdatePwdView:(id) sender{
+    
+    [self performSegueWithIdentifier:@"UpdatePwdView" sender:sender];
     
 }
 #pragma Alarm 相关的设置

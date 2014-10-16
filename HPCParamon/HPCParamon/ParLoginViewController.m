@@ -228,7 +228,7 @@
     // NSDictionary *dictParLogin=@{@"userName" : @"admin", @"password" : @"Para@2014"};
     //设置参数字典
     NSDictionary *dictParLogin=@{@"userName" : _userName.text, @"password" : _passWord.text};
-    [[AFTwitterAPIClient sharedClient] postPath:g_loginApiPort parameters:dictParLogin success:^(AFHTTPRequestOperation *operation, id JSON)
+    [[AFTwitterAPIClient sharedClient] postPath:LoginApiPort parameters:dictParLogin success:^(AFHTTPRequestOperation *operation, id JSON)
      {
          id myRequest = [NSJSONSerialization JSONObjectWithData:JSON options:NSJSONReadingMutableContainers error:nil];
          if ([myRequest isKindOfClass:[NSDictionary class]]) {

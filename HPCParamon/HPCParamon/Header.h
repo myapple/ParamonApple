@@ -19,8 +19,19 @@
 
 //#define min(X, Y)  ((X) < (Y) ? (X) : (Y))
 //#define CheckStringIsNull(str) checkStringIsnull:
-#define g_getWorkMSGPort @"findPage-APPJOB"
-#define  g_loginApiPort @"loginAppUser-APPUSER"
+#define AlarmMSGApiPort  @"alarmmsg"
+#define WorkMSGApiPort @"findPage-APPJOB"
+#define LoginApiPort @"loginAppUser-APPUSER"
+
+
+#define UpDatePassWordApiPort @"updatePassword-USER"
+#define DeleteJobApiPort    @"deleteJob-APPJOB"
+
+#define WORKIDIIndex 7
+#define WORKUSERIndex 10
+#define ENDSTATEIndex 3
+#define ENDUnNorMalMark 1
+
 extern NSString * g_userKey;
 extern BOOL  g_workSystemUser;
 extern int loadCount;

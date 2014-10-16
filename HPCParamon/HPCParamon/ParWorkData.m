@@ -17,11 +17,13 @@
 @synthesize totalPage;
 @synthesize workData;
 @synthesize updateTime;
+@synthesize endTime;
 -(void)setAllMsgValue:(NSDictionary *) dataSource{
     if (![dataSource count]) {
         return;
     }
-   /* hasNext = (BOOL)dataSource[@"json"][@"hasNext"];
+   /*
+    hasNext = (BOOL)dataSource[@"json"][@"hasNext"];
     hasPre  = (BOOL) dataSource[@"json"][@"hasPre"];
     prePage = (int )dataSource[@"json"][@"prePage"];
     nextPage= (int )dataSource[@"json"][@"nextPage"];
@@ -33,7 +35,7 @@
     NSDictionary* firstData = dataSource[@"json"];
     [self setJsonDic:firstData];
     
-    [self setupdateDatetime:dataSource[@"entityByRequest"]];
+    [self setEntityByRequestDic:dataSource[@"entityByRequest"]];
     
     
 }
@@ -50,12 +52,14 @@
     totalCount= (int )dataJson[@"totalCount"];
     workData =[NSMutableArray  arrayWithObject:dataJson[@"result"]];
 }
--(void) setupdateDatetime:(NSDictionary *) dataJson
+-(void) setEntityByRequestDic:(NSDictionary *) dataJson
 {
     if (![dataJson count]) {
         return;
     }
-     updateTime=dataJson[@"updateDatetime"];
+    updateTime=dataJson[@"updateDatetime"];
+    endTime =dataJson[@"endTime"];
+    
 }
 -(int )print
 {
@@ -69,6 +73,10 @@
         workData = [[NSMutableArray alloc] init];
     }
     return self;
+}
+-(void)reMoveAllWorkData
+{
+    [workData removeAllObjects];
 }
 -(void) addData
 {

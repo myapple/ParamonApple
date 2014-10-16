@@ -149,7 +149,7 @@
 
 -(void)initCollectionView{
     //当rows 为0 时 删除标题
-    [self.mCollectview  setUpCollection];
+    [self.mCollectview  setUpCollection:super.mShoworkMsg ];
     if([self.mCollectview.dataMArr count]==0)
     {
         _mCollectionTitle.hidden = YES;

@@ -18,6 +18,7 @@
 @property(nonatomic,retain) UIButton *alarmText;
 
 @property (strong,nonatomic) ParWorkData* workDetailMsg;
+@property (strong,nonatomic) NSMutableArray* mShoworkMsg;
 @property (strong,nonatomic) NSMutableArray *alarmDetailMsg;
 - (void)initCtrl:(UIViewController *) mViewController andTitle: (UIButton *)_btnTitle andAlarmNum:_btnAlarmNum andAlarm:(UIButton *)_btnAlarm  andWorkMsg:(UIButton *)_btnWorkMsg  andSetUser:(UIButton *)_btnSetUser
 ;

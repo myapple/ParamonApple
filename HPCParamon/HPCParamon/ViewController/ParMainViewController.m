@@ -24,6 +24,7 @@
 @synthesize workText=_workText;
 @synthesize alarmText=_alarmText;
 @synthesize alarmDetailMsg;
+@synthesize mShoworkMsg;
 #pragma mark - set  popView
 - (PopoverView *)getSetMangerPopview:(UIButton *)sender {
     
@@ -128,25 +129,29 @@
     }
 
 }
+#pragma mark -get workMessage from Server
+-(void) setWorkMessage
+{
+    [mShoworkMsg removeAllObjects];
+    //获取异常作业结束数据
+    if ([workDetailMsg.workData count]==0) {
+        [self getMSGfromServer:WorkMSGApiPort forSize:nil andPage:nil];
+    }
+    for (NSArray *workmsg in workDetailMsg.workData) {
+        NSString* workID=workDetailMsg.workData[WORKIDIIndex];
+        int endstate=(int)workmsg[ENDSTATEIndex];
+        NSString* workUser=workDetailMsg.workData[WORKUSERIndex];
+        NSArray *msg =@[workID,workUser,@(endstate)];
+        [mShoworkMsg addObject:msg];
+        [mShoworkMsg addObject:msg];
+    }
+
+}
+
+
 -(void)showUpdatePwdView:(id) sender
 {
     [self performSegueWithIdentifier:@"UpdatePwdView" sender:sender];
-}
-- (void)showAlarmMsgPopview:(id)sender {
-    static int num=1;
-    [self addAlarmText:(++num)];
-    /*if (!_alert || !_alert.isDisplayed) {
-     _alert = [[AMSmoothAlertView alloc]initDropAlertWithTitle:@"Notice !" andText:@"告警信息1\n告警信息2\n告警信息3\n 告警信息3 \n  是否查看更多？!" andCancelButton:YES forAlertType:AlertInfo];
-     [_alert setTitleFont:[UIFont fontWithName:@"Verdana" size:25.0f]];
-     
-     _alert.cornerRadius = 3.0f;
-     [_alert show];
-     }else{
-     [_alert dismissAlertView];
-     }*/
-    [self popClickAction:sender];
-    
-    
 }
 
 -(void)showMessageBox:(NSString*) title andText:text andCancel:(BOOL)isHave
@@ -436,6 +441,7 @@
     alarmDetailMsg =[[NSMutableArray alloc] init ];
     _unNormalWork =[[NSMutableArray alloc] init ];
     workDetailMsg =[[ParWorkData alloc] init];
+    mShoworkMsg=[[NSMutableArray alloc] init ];
 }
 
 - (void)didReceiveMemoryWarning

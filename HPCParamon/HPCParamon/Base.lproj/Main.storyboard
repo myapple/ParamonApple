@@ -1131,8 +1131,8 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="zTW-c7-ryH"/>
         <segue reference="ao1-hE-ClN"/>
-        <segue reference="zDk-4h-KJF"/>
+        <segue reference="OeF-cy-t8h"/>
+        <segue reference="zTW-c7-ryH"/>
     </inferredMetricsTieBreakers>
 </document>

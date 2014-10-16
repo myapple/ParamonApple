@@ -15,7 +15,6 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        [self setUpCollection];
         // _dataMArr = [[NSMutableArray alloc ] init];
         // 获取数据
         //
@@ -29,8 +28,10 @@
     return self;
 }
 
--(void)setUpCollection{
-    self.dataMArr = [NSMutableArray array];
+-(void)setUpCollection:(NSMutableArray *)dataArr{
+  //  self.dataMArr = NSMutableArray array];
+    self.dataMArr = [NSMutableArray  arrayWithObject:dataArr];
+    
        int testID =0;
     testID++;
     /*while (testID <=20) {

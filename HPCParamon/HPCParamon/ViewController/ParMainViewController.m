@@ -94,12 +94,6 @@
 
         [titles addObject:item2];
     }
-   /* for (NSDictionary *workmsg in _unNormalWork) {
-        NSString *item2 =[NSString stringWithFormat:@"作业%@异常结束\n%@ %@",[workmsg valueForKeyPath:@"userName"],clockAttributedString.string,@"xxx-xx-xx"] ;
-        
-        [titles addObject:item2];
-    }
-*/
     PopoverView *pop = [[PopoverView alloc] initWithPoint:point titles:titles images:nil];
     return pop;
     
@@ -149,6 +143,7 @@
 }
 
 
+#pragma mark -showView
 -(void)showUpdatePwdView:(id) sender
 {
     [self performSegueWithIdentifier:@"UpdatePwdView" sender:sender];
@@ -387,15 +382,42 @@
     return 50.0f;
 }
 
+#pragma mark -get PageMSGButton
 
-- (void)getMSGfromServer:(NSString *) mPort forSize: (NSString *)pageSize andPage:(NSString *)page
+-(void)getPrevPage:(NSString *)mPort andPageSize:(int)pageSize//andSource:(ParWorkData *)data
+{
+    if (workDetailMsg.hasPre) {
+        [self getMSGfromServer:mPort forSize:pageSize  andPage:workDetailMsg.prePage];
+    }
+}
+-(void)getNextPage:(NSString *)mPort andPageSize:(int)pageSize//
+{
+    if (workDetailMsg.hasNext){
+        [self getMSGfromServer:mPort forSize:pageSize  andPage:workDetailMsg.nextPage];
+    }
+}
+-(void)getFirstPage:(NSString *)mPort andPageSize:(int)pageSize//
+{
+    if (workDetailMsg.hasPre){
+        [self getMSGfromServer:mPort forSize:pageSize  andPage:1];
+    }
+}
+-(void)getLastPage:(NSString *)mPort andPageSize:(int)pageSize//
+{
+    if (workDetailMsg.hasNext){
+        [self getMSGfromServer:mPort forSize:pageSize  andPage:workDetailMsg.totalPage];
+    }
+}
+
+//- (void)getMSGfromServer:(NSString *) mPort forSize: (NSString *)pageSize andPage:(NSString *)page
+- (void)getMSGfromServer:(NSString *) mPort forSize: (int)pageSize andPage:(int)page
 {
     //创建实例对象
     if (g_userKey==nil) {
         NSLog(@"%@g_userKey=",g_userKey);
         return;
     }
-    NSDictionary *dictWork =@{@"userKey":g_userKey,@"size":pageSize,@"no":page};
+    NSDictionary *dictWork =@{@"userKey":g_userKey,@"size":@(pageSize),@"no":@(page)};
     [[AFTwitterAPIClient sharedClient] postPath:mPort parameters:dictWork success:^(AFHTTPRequestOperation *operation, id JSON)
      {
          if (JSON==nil) {
@@ -444,6 +466,31 @@
     mShoworkMsg=[[NSMutableArray alloc] init ];
 }
 
+#pragma mark quit application
+-(void)deleteAccessToken
+{
+    //删除保存AccessToken的文件
+    //获取分类的沙盒路径
+    NSArray* myPath =NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,NSUserDomainMask, YES);
+    NSString *myDocPath= [myPath objectAtIndex:0];
+    NSString *path=[myDocPath stringByAppendingPathComponent:UserAccessTokenFile];
+    NSFileManager *file_manager = [NSFileManager defaultManager];
+    NSError *error;
+    if ([file_manager isDeletableFileAtPath:path]) {
+        if(![file_manager removeItemAtPath:path error:&error])
+            NSLog(@"%@",error);
+    }
+    else{
+         NSLog(@"%@删除失败，是不可删除文件",UserAccessTokenFile);
+    }
+
+}
+-(void)quitApplication
+{
+    [self deleteAccessToken];
+    abort();
+   
+}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];

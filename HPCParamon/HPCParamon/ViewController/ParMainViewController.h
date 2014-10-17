@@ -25,5 +25,13 @@
 - (PopoverView *)getSetMangerPopview:(UIButton *)sender ;
 - (PopoverView *)getUnNormalPopview:(UIButton *)sender ;
 -(void)showMessageBox:(NSString*) title andText:text andCancel:(BOOL)isHave;
-
+-(void)getPrevPage:(NSString *)mPort andPageSize:(int)pageSize//andSource:(ParWorkData *)data
+;
+-(void)getNextPage:(NSString *)mPort andPageSize:(int)pageSize//
+;
+-(void)getFirstPage:(NSString *)mPort andPageSize:(int)pageSize//
+;
+-(void)getLastPage:(NSString *)mPort andPageSize:(int)pageSize//
+;
+-(void)quitApplication;
 @end

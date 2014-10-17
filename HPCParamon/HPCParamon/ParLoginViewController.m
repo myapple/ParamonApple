@@ -145,7 +145,7 @@
     return ![file_manager fileExistsAtPath:path];
 }
 
-- (void) saveUserMsg:(NSDictionary *) dataSource
+- (void) saveUserAccessToken:(NSDictionary *) dataSource
 {
     if([dataSource count]>0)
     {
@@ -192,7 +192,7 @@
     }
 }
 
-- (NSString *) getAccessTokey
+- (NSString *) getAccessToken
 {
     //获取分类的沙盒路径
     NSArray* myPath =NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
@@ -239,7 +239,7 @@
                  [[[UIAlertView alloc] initWithTitle:@"ok" message:@"Success" delegate:nil cancelButtonTitle:nil otherButtonTitles:NSLocalizedString(@"OK", nil), nil] show];
                  
                  NSLog(@"%@",g_userKey);
-                 [self saveUserMsg:dict];//保存 accessToken
+                 [self saveUserAccessToken:dict];//保存 accessToken
                  if (_isRememberKey) {
                      [self saveUserKey:dictParLogin];
                  }
@@ -329,16 +329,20 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self getUserKey];
+    //[self getUserKey];
     [self initCtrl];
-    /*if (![self isFirstLoginParamo]) {
-        
+    if (![self isFirstLoginParamo]) {
         //NSLog(@"%@",g_userKey);
-        g_userKey =[self getUserMsgfromFile ];
+        g_userKey =[self getAccessToken ];
         NSLog(@"%@",g_userKey);
         [self performSegueWithIdentifier:@"WorkMsgSegue" sender:self];
         
-    }*/
+    }
+    else
+    {
+        [self getUserKey];
+
+    }
     // Do any additional setup after loading the view.
     
     

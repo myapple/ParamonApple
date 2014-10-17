@@ -52,6 +52,7 @@
                 break;
             case 3:
                 NSLog(@"退出");
+                [super quitApplication];
             default:
                 break;
         }

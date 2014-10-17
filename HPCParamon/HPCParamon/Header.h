@@ -19,6 +19,7 @@
 
 //#define min(X, Y)  ((X) < (Y) ? (X) : (Y))
 //#define CheckStringIsNull(str) checkStringIsnull:
+#define UserAccessTokenFile @"hpcparamoninfo.plist"
 #define AlarmMSGApiPort  @"alarmmsg"
 #define WorkMSGApiPort @"findPage-APPJOB"
 #define LoginApiPort @"loginAppUser-APPUSER"
